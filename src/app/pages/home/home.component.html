@@ -1,6 +1,6 @@
 <div class="main">
-    <header class="header">
-        <div class="container header-container">
+    <header class="header" [ngClass]="{'header-top': !showFixedHeader}">
+        <div class="container container-side-margin header-container">
             <div class="header-logo">
                 <svg id="logo_positiva" data-name="logo positiva" xmlns="http://www.w3.org/2000/svg" width="76.534" height="79.833" viewBox="0 0 76.534 79.833">
                     <g id="Grupo_149" data-name="Grupo 149">
@@ -68,7 +68,7 @@
     </header>
     
     <section class="section-main">
-        <div class="section-main-container">
+        <div class="section-main-container container container-side-margin">
             <div class="section-main-title">
                 <h1>ENTERPRISE VIDEO SOLUTIONS</h1>
             </div>
@@ -78,20 +78,690 @@
                 <div class="main-subtitle">COST-EFFECTIVE</div>
             </div>
             <div class="section-main-cta">
-                <button>GET STARTED</button>
+                <button class="button-default">GET STARTED</button>
             </div>
         </div>
-        <div class="go-down-element">
-            <svg xmlns="http://www.w3.org/2000/svg" width="41" height="41" viewBox="0 0 41 41">
-                <g id="go-down" transform="translate(-141.664 -613)">
-                    <path id="Caminho_54" data-name="Caminho 54" d="M628.243,636.74l8.421,7.051,8.421-7.051" transform="translate(-475.161 -1.93)" fill="none" stroke="#fff" stroke-width="2"/>
-                    <path id="Caminho_55" data-name="Caminho 55" d="M628.243,636.74l8.421,7.051,8.421-7.051" transform="translate(-475.161 -9.192)" fill="none" stroke="#fff" stroke-width="2"/>
-                    <g id="Elipse_6" data-name="Elipse 6" transform="translate(141.664 613)" fill="none" stroke="#fff" stroke-width="2">
-                        <circle cx="20.5" cy="20.5" r="20.5" stroke="none"/>
-                        <circle cx="20.5" cy="20.5" r="19.5" fill="none"/>
-                    </g>
-                </g>
-            </svg>
+
+    </section>
+
+    <section class="section-portfolio section-container">
+        <div class="section-portfolio-container container container-side-margin">
+
+            <div class="section-header">
+                <h1 class="portfolio-title title-default">
+                    PORTFOLIO
+                </h1>
+                <p>
+                    <span>There’s a video solution for every business.</span> And we don’t mean your cell phone camera. We take technology and media to new levels so our customers can stay focused on their own core competencies.
+                </p>    
+            </div>
+            <div class="section-portfolio-content">
+                <div class="content-wrapper">
+                    <div class="section-portfolio-cards">
+
+
+
+
+                        <div class="portfolio-card">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-video">
+                                    <div class="video"></div>
+                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.801" height="74.239" viewBox="0 0 76.801 74.239">
+                                        <g transform="matrix(1, 0, 0, 1, 0, 0)">
+                                          <path id="Polígono_7-2" data-name="Polígono 7" d="M21.542,5.948a4,4,0,0,1,6.916,0L46.506,36.99A4,4,0,0,1,43.048,43H6.952a4,4,0,0,1-3.458-6.01Z" transform="translate(6 29) rotate(-30)" fill="#fff"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="portfolio-info">
+                                    <div class="portfolio-title">IQVIA</div>
+                                    <div class="portfolio-subtitle">Corporate video</div>
+                                </div>    
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-video">
+                                    <div class="video"></div>
+                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.801" height="74.239" viewBox="0 0 76.801 74.239">
+                                        <g transform="matrix(1, 0, 0, 1, 0, 0)">
+                                          <path id="Polígono_7-2" data-name="Polígono 7" d="M21.542,5.948a4,4,0,0,1,6.916,0L46.506,36.99A4,4,0,0,1,43.048,43H6.952a4,4,0,0,1-3.458-6.01Z" transform="translate(6 29) rotate(-30)" fill="#fff"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="portfolio-info">
+                                    <div class="portfolio-title">IQVIA</div>
+                                    <div class="portfolio-subtitle">Corporate video</div>
+                                </div>    
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-video">
+                                    <div class="video"></div>
+                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.801" height="74.239" viewBox="0 0 76.801 74.239">
+                                        <g transform="matrix(1, 0, 0, 1, 0, 0)">
+                                          <path id="Polígono_7-2" data-name="Polígono 7" d="M21.542,5.948a4,4,0,0,1,6.916,0L46.506,36.99A4,4,0,0,1,43.048,43H6.952a4,4,0,0,1-3.458-6.01Z" transform="translate(6 29) rotate(-30)" fill="#fff"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="portfolio-info">
+                                    <div class="portfolio-title">IQVIA</div>
+                                    <div class="portfolio-subtitle">Corporate video</div>
+                                </div>    
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-video">
+                                    <div class="video"></div>
+                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.801" height="74.239" viewBox="0 0 76.801 74.239">
+                                        <g transform="matrix(1, 0, 0, 1, 0, 0)">
+                                          <path id="Polígono_7-2" data-name="Polígono 7" d="M21.542,5.948a4,4,0,0,1,6.916,0L46.506,36.99A4,4,0,0,1,43.048,43H6.952a4,4,0,0,1-3.458-6.01Z" transform="translate(6 29) rotate(-30)" fill="#fff"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="portfolio-info">
+                                    <div class="portfolio-title">IQVIA</div>
+                                    <div class="portfolio-subtitle">Corporate video</div>
+                                </div>    
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-video">
+                                    <div class="video"></div>
+                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.801" height="74.239" viewBox="0 0 76.801 74.239">
+                                        <g transform="matrix(1, 0, 0, 1, 0, 0)">
+                                          <path id="Polígono_7-2" data-name="Polígono 7" d="M21.542,5.948a4,4,0,0,1,6.916,0L46.506,36.99A4,4,0,0,1,43.048,43H6.952a4,4,0,0,1-3.458-6.01Z" transform="translate(6 29) rotate(-30)" fill="#fff"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="portfolio-info">
+                                    <div class="portfolio-title">IQVIA</div>
+                                    <div class="portfolio-subtitle">Corporate video</div>
+                                </div>    
+                            </div>
+                        </div>
+
+                        <div class="portfolio-card">
+                            <div class="portfolio-wrapper">
+                                <div class="portfolio-video">
+                                    <div class="video"></div>
+                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.801" height="74.239" viewBox="0 0 76.801 74.239">
+                                        <g transform="matrix(1, 0, 0, 1, 0, 0)">
+                                          <path id="Polígono_7-2" data-name="Polígono 7" d="M21.542,5.948a4,4,0,0,1,6.916,0L46.506,36.99A4,4,0,0,1,43.048,43H6.952a4,4,0,0,1-3.458-6.01Z" transform="translate(6 29) rotate(-30)" fill="#fff"/>
+                                        </g>
+                                    </svg>
+                                </div>
+                                <div class="portfolio-info">
+                                    <div class="portfolio-title">IQVIA</div>
+                                    <div class="portfolio-subtitle">Corporate video</div>
+                                </div>    
+                            </div>
+                        </div>
+
+
+
+
+
+
+                    </div>
+                    <div class="section-portfolio-show-more">
+                        <button class="button-default">SHOW MORE</button>
+                    </div>
+                </div>
+            </div>
         </div>
     </section>
+
+
+    <section class="section-services">
+        <div class="bg-video section-container">
+
+        
+            <div class="section-services-container container container-side-margin">
+
+                <div class="section-header">
+                    <h1 class="services-title title-default">
+                        SERVICES
+                    </h1>
+                    <p>
+                        <span>From script to screen, we can help you.</span>
+                    </p>    
+                </div>
+                <div class="section-services-content">
+                    <div class="service-cards">
+                        
+                        <!-- FULL PRODUCTION -->
+                        
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40.68" viewBox="0 0 41 40.68">
+                                    <g id="clacket" transform="translate(-28 -224.167)">
+                                        <g id="Retângulo_20" data-name="Retângulo 20" transform="translate(29.039 242.202)" fill="none" stroke="#f26122" stroke-width="2">
+                                            <rect width="39.961" height="22.644" rx="5" stroke="none"/>
+                                            <rect x="1" y="1" width="37.961" height="20.644" rx="4" fill="none"/>
+                                        </g>
+                                        <g id="Retângulo_21" data-name="Retângulo 21" transform="translate(28 233.834) rotate(-14)" fill="none" stroke="#f26122" stroke-width="2">
+                                            <rect width="39.961" height="7.326" rx="3.663" stroke="none"/>
+                                        <rect x="1" y="1" width="37.961" height="5.326" rx="2.663" fill="none"/>
+                                    </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="service-title">Full production</div>
+                            <div class="service-description">
+                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                            </div>
+                        </div>
+                        
+                        <!-- VIDEO EDITING -->
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="40.68" viewBox="0 0 41 40.68">
+                                    <g id="clacket" transform="translate(-28 -224.167)">
+                                    <g id="Retângulo_20" data-name="Retângulo 20" transform="translate(29.039 242.202)" fill="none" stroke="#f26122" stroke-width="2">
+                                        <rect width="39.961" height="22.644" rx="5" stroke="none"/>
+                                        <rect x="1" y="1" width="37.961" height="20.644" rx="4" fill="none"/>
+                                    </g>
+                                    <g id="Retângulo_21" data-name="Retângulo 21" transform="translate(28 233.834) rotate(-14)" fill="none" stroke="#f26122" stroke-width="2">
+                                        <rect width="39.961" height="7.326" rx="3.663" stroke="none"/>
+                                        <rect x="1" y="1" width="37.961" height="5.326" rx="2.663" fill="none"/>
+                                    </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="service-title">Video editing</div>
+                            <div class="service-description">
+                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                            </div>
+                        </div>
+
+                        <!-- EXPLAINER VIDEO -->
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="28.017" viewBox="0 0 41 28.017">
+                                    <g id="explainer" transform="translate(0 -11)">
+                                    <g id="Retângulo_20" data-name="Retângulo 20" transform="translate(0 11)" fill="none" stroke="#f26122" stroke-width="2">
+                                        <rect width="41" height="28.017" rx="5" stroke="none"/>
+                                        <rect x="1" y="1" width="39" height="26.017" rx="4" fill="none"/>
+                                    </g>
+                                    <g id="Elipse_1" data-name="Elipse 1" transform="translate(17.083 16.467)" fill="none" stroke="#f26122" stroke-width="2">
+                                        <circle cx="4.1" cy="4.1" r="4.1" stroke="none"/>
+                                        <circle cx="4.1" cy="4.1" r="3.1" fill="none"/>
+                                    </g>
+                                    <g id="Retângulo_23" data-name="Retângulo 23" transform="translate(10.25 26.033)" fill="none" stroke="#f26122" stroke-width="2">
+                                        <path d="M6.753,0H14.43a6.753,6.753,0,0,1,6.753,6.753v0A1.447,1.447,0,0,1,19.736,8.2H1.447A1.447,1.447,0,0,1,0,6.753v0A6.753,6.753,0,0,1,6.753,0Z" stroke="none"/>
+                                        <path d="M6.373,1H14.81a5.373,5.373,0,0,1,5.373,5.373v0a.827.827,0,0,1-.827.827H1.827A.827.827,0,0,1,1,6.373v0A5.373,5.373,0,0,1,6.373,1Z" fill="none"/>
+                                    </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="service-title">Explainer video</div>
+                            <div class="service-description">
+                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                            </div>
+                        </div>
+
+
+                        <!-- SOCIAL MEDIA -->
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="28.017" viewBox="0 0 41 28.017">
+                                    <g id="share" transform="translate(0 -19)">
+                                    <g id="Retângulo_20" data-name="Retângulo 20" transform="translate(0 19)" fill="none" stroke="#f26122" stroke-width="2">
+                                        <rect width="41" height="28.017" rx="5" stroke="none"/>
+                                        <rect x="1" y="1" width="39" height="26.017" rx="4" fill="none"/>
+                                    </g>
+                                    <path id="Caminho_57" data-name="Caminho 57" d="M36.982,31.5l-9.749,5.681,9.749,6.187" transform="translate(-12.724 -3.959)" fill="none" stroke="#f26122" stroke-width="2"/>
+                                    <g id="Elipse_2" data-name="Elipse 2" transform="translate(20.5 23.783)" fill="#f1f1f1" stroke="#f26122" stroke-width="2">
+                                        <circle cx="3.758" cy="3.758" r="3.758" stroke="none"/>
+                                        <circle cx="3.758" cy="3.758" r="2.758" fill="none"/>
+                                    </g>
+                                    <g id="Elipse_3" data-name="Elipse 3" transform="translate(20.5 35.4)" fill="#f1f1f1" stroke="#f26122" stroke-width="2">
+                                        <circle cx="3.758" cy="3.758" r="3.758" stroke="none"/>
+                                        <circle cx="3.758" cy="3.758" r="2.758" fill="none"/>
+                                    </g>
+                                    <g id="Elipse_4" data-name="Elipse 4" transform="translate(10.934 29.25)" fill="#f1f1f1" stroke="#f26122" stroke-width="2">
+                                        <circle cx="3.758" cy="3.758" r="3.758" stroke="none"/>
+                                        <circle cx="3.758" cy="3.758" r="2.758" fill="none"/>
+                                    </g>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="service-title">Social media video production</div>
+                            <div class="service-description">
+                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                            </div>
+                        </div>
+
+
+                        <!-- Photography & Drone shooting -->
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="51.469" height="26.647" viewBox="0 0 51.469 26.647">
+                                    <g id="drone" transform="translate(-2.01 -12.493)">
+                                    <g id="Retângulo_24" data-name="Retângulo 24" transform="translate(21.555 24.879)" fill="none" stroke="#f26122" stroke-width="2">
+                                        <rect width="12" height="12" rx="6" stroke="none"/>
+                                        <rect x="1" y="1" width="10" height="10" rx="5" fill="none"/>
+                                    </g>
+                                    <g id="União_1" data-name="União 1" transform="translate(7.204 16.293)" fill="none">
+                                        <path d="M20.54,9.361l-.236.052v-.1l-5.63-1.241H2.834C1.269,8.067,0,6.53,0,4.635A3.176,3.176,0,0,1,2.834,1.2H13.76L20.3.081V0l.236.041L20.777,0V.081L27.32,1.2H38.247a3.176,3.176,0,0,1,2.834,3.431c0,1.9-1.269,3.432-2.834,3.432H26.407l-5.63,1.241v.1Z" stroke="none"/>
+                                        <path d="M 20.54187202453613 7.312441825866699 L 25.97607040405273 6.114225387573242 L 26.18884086608887 6.067315101623535 L 26.4067211151123 6.067315101623535 L 38.24721145629883 6.067315101623535 C 38.58713150024414 6.067315101623535 39.08090209960938 5.509385108947754 39.08090209960938 4.635105133056641 C 39.08090209960938 3.761645317077637 38.58713150024414 3.204245328903198 38.24721145629883 3.204245328903198 L 27.32041168212891 3.204245328903198 L 27.14998054504395 3.204245328903198 L 26.98201179504395 3.175405263900757 L 20.54113578796387 2.069665908813477 L 20.54044151306152 2.069785118103027 L 20.53974723815918 2.069665908813477 L 14.09890079498291 3.175405263900757 L 13.93093109130859 3.204245328903198 L 13.76050090789795 3.204245328903198 L 2.833691120147705 3.204245328903198 C 2.493771076202393 3.204245328903198 2.000000953674316 3.761645317077637 2.000000953674316 4.635105133056641 C 2.000000953674316 5.509385108947754 2.493771076202393 6.067315101623535 2.833691120147705 6.067315101623535 L 14.67418098449707 6.067315101623535 L 14.89206123352051 6.067315101623535 L 15.10483074188232 6.114225387573242 L 20.53901100158691 7.312441825866699 L 20.54044151306152 7.312125205993652 L 20.54187202453613 7.312441825866699 M 20.7767219543457 9.412895202636719 L 20.54044151306152 9.360575675964355 L 20.30416107177734 9.412895202636719 L 20.30416107177734 9.30870532989502 L 14.67418098449707 8.067315101623535 L 2.833691120147705 8.067315101623535 C 1.268951058387756 8.067315101623535 1.049804723152192e-06 6.530364990234375 1.049804723152192e-06 4.635105133056641 C 1.049804723152192e-06 2.740975141525269 1.268951058387756 1.204245209693909 2.833691120147705 1.204245209693909 L 13.76050090789795 1.204245209693909 L 20.30416107177734 0.08085522055625916 L 20.30416107177734 -4.782867563335458e-06 L 20.54044151306152 0.04054521769285202 L 20.7767219543457 -4.782867563335458e-06 L 20.7767219543457 0.08085522055625916 L 27.32041168212891 1.204245209693909 L 38.24721145629883 1.204245209693909 C 39.81193923950195 1.204245209693909 41.08090209960938 2.740975141525269 41.08090209960938 4.635105133056641 C 41.08090209960938 6.530364990234375 39.81193923950195 8.067315101623535 38.24721145629883 8.067315101623535 L 26.4067211151123 8.067315101623535 L 20.7767219543457 9.30870532989502 L 20.7767219543457 9.412895202636719 Z" stroke="none" fill="#f26122"/>
+                                    </g>
+                                    <path id="Caminho_59" data-name="Caminho 59" d="M-112.248,2674.824s-.8-12.181,6.486-14.569" transform="translate(127.719 -2636.747)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+                                    <line id="Linha_2" data-name="Linha 2" y2="4.575" transform="translate(11.454 13.493)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+                                    <line id="Linha_3" data-name="Linha 3" x2="18.888" transform="translate(2.01 14.637)" fill="none" stroke="#f26122" stroke-width="1"/>
+                                    <path id="Caminho_59-2" data-name="Caminho 59" d="M-105.788,2674.824s.8-12.181-6.486-14.569" transform="translate(145.806 -2636.747)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+                                    <line id="Linha_2-2" data-name="Linha 2" y2="4.575" transform="translate(44.035 13.493)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+                                    <line id="Linha_3-2" data-name="Linha 3" x1="18.888" transform="translate(34.591 14.637)" fill="none" stroke="#f26122" stroke-width="1"/>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="service-title">Photography & Drone shooting</div>
+                            <div class="service-description">
+                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                            </div>
+                        </div>
+
+                        <!-- Live Webcasting -->
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="41" height="28.017" viewBox="0 0 41 28.017">
+                                    <g id="web-casting" transform="translate(-118 -4747)">
+                                    <g id="Retângulo_20" data-name="Retângulo 20" transform="translate(118 4747)" fill="none" stroke="#f26122" stroke-width="2">
+                                        <rect width="41" height="28.017" rx="5" stroke="none"/>
+                                        <rect x="1" y="1" width="39" height="26.017" rx="4" fill="none"/>
+                                    </g>
+                                    <g id="Elipse_1" data-name="Elipse 1" transform="translate(135.083 4752.467)" fill="none" stroke="#f26122" stroke-width="2">
+                                        <circle cx="4.1" cy="4.1" r="4.1" stroke="none"/>
+                                        <circle cx="4.1" cy="4.1" r="3.1" fill="none"/>
+                                    </g>
+                                    <g id="Retângulo_23" data-name="Retângulo 23" transform="translate(128.25 4762.033)" fill="none" stroke="#f26122" stroke-width="2">
+                                        <path d="M6.753,0H14.43a6.753,6.753,0,0,1,6.753,6.753v0A1.447,1.447,0,0,1,19.736,8.2H1.447A1.447,1.447,0,0,1,0,6.753v0A6.753,6.753,0,0,1,6.753,0Z" stroke="none"/>
+                                        <path d="M6.373,1H14.81a5.373,5.373,0,0,1,5.373,5.373v0a.827.827,0,0,1-.827.827H1.827A.827.827,0,0,1,1,6.373v0A5.373,5.373,0,0,1,6.373,1Z" fill="none"/>
+                                    </g>
+                                    <path id="Retângulo_33" data-name="Retângulo 33" d="M0,0H11.4a5,5,0,0,1,5,5V6.833a0,0,0,0,1,0,0H0a0,0,0,0,1,0,0V0A0,0,0,0,1,0,0Z" transform="translate(142.6 4747)" fill="#f26122"/>
+                                    <text id="LIVE" transform="translate(146.017 4747.683)" fill="#fff" font-size="4" font-family="OpenSans-Bold, Open Sans" font-weight="700" letter-spacing="0.003em"><tspan x="0" y="4">LIVE</tspan></text>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="service-title">Live Webcasting</div>
+                            <div class="service-description">
+                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                            </div>
+                        </div>
+
+
+                        <!-- Event Coverage -->
+
+                        <div class="service-card">
+                            <div class="service-icon">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="36" height="31.517" viewBox="0 0 36 31.517">
+                                    <g id="event" transform="translate(-30 -225.5)">
+                                    <g id="Retângulo_20" data-name="Retângulo 20" transform="translate(30 228)" fill="none" stroke="#f26122" stroke-width="2">
+                                        <rect width="36" height="29.017" rx="5" stroke="none"/>
+                                        <rect x="1" y="1" width="34" height="27.017" rx="4" fill="none"/>
+                                    </g>
+                                    <line id="Linha_10" data-name="Linha 10" x2="34" transform="translate(30.5 236.5)" fill="none" stroke="#f26122" stroke-width="2"/>
+                                    <line id="Linha_11" data-name="Linha 11" y2="5" transform="translate(39.871 226.5)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+                                    <line id="Linha_12" data-name="Linha 12" y2="5" transform="translate(56.129 226.5)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+                                    <path id="Polígono_8" data-name="Polígono 8" d="M5.958,1.863a1,1,0,0,1,1.8,0l.958,1.982a1,1,0,0,0,.765.556l2.181.3a1,1,0,0,1,.556,1.713l-1.588,1.52a1,1,0,0,0-.293.9L10.729,11a1,1,0,0,1-1.457,1.059L7.331,11.014a1,1,0,0,0-.945,0L4.444,12.055A1,1,0,0,1,2.988,11l.391-2.164a1,1,0,0,0-.293-.9L1.5,6.411A1,1,0,0,1,2.054,4.7l2.181-.3A1,1,0,0,0,5,3.845Z" transform="translate(41.983 238.834)" fill="#f26122"/>
+                                    </g>
+                                </svg>
+                            </div>
+                            <div class="service-title">Event Coverage</div>
+                            <div class="service-description">
+                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                            </div>
+                        </div>
+
+
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+    <section class="section-how-we-work">        
+        <div class="section-how-we-work-container">
+
+            <div class="section-header">
+                <h1 class="how-we-work-title title-light">
+                    HOW WE WORK
+                </h1>
+                <p>
+                    <span>in 7 steps</span>
+                </p>    
+            </div>
+            <div class="section-how-we-work-content">
+                <div class="accordion-container">
+
+                    <div class="accordion accordion-1" [ngClass]="{'active': accordion1Active}">
+                    <!-- <div class="accordion accordion-1 active"> -->
+                        <div (click)="accordion1Active = !accordion1Active" class="accordion-header container container-side-margin">
+                            <div class="accordion-header-title">PRE PRODUCTION</div>
+                            <div class="accordion-header-steps">3 steps</div>
+                            <div class="accordion-header-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21.515" height="12.879" viewBox="0 0 21.515 12.879">
+                                    <path id="Caminho_126" data-name="Caminho 126" d="M10491.875,14769.336l9.7,9.7,9.7-9.7" transform="translate(10512.329 14781.154) rotate(180)" fill="none" stroke="#f1f1f1" stroke-width="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="accordion-content container container-side-margin">
+
+                            <div class="section-how-we-work-steps">
+                                
+                                
+                                
+                                <div class="how-we-work-step-ctas">
+                                    <div class="first-step">01.</div>
+                                    <div class="step-ctas">
+                                        
+                                        
+                                        <div class="step-cta">
+
+                                            <div class="step-cta-header">
+                                                <div class="step-cta-header-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="31.517" viewBox="0 0 31 31.517">
+                                                        <g id="Grupo_121" data-name="Grupo 121" transform="translate(-30 -225.5)">
+                                                          <g id="Retângulo_20" data-name="Retângulo 20" transform="translate(30 228)" fill="none" stroke="#f26122" stroke-width="2">
+                                                            <rect width="31" height="29.017" rx="5" stroke="none"/>
+                                                            <rect x="1" y="1" width="29" height="27.017" rx="4" fill="none"/>
+                                                          </g>
+                                                          <line id="Linha_10" data-name="Linha 10" x2="29" transform="translate(30.5 236.5)" fill="none" stroke="#f26122" stroke-width="2"/>
+                                                          <rect id="Retângulo_77" data-name="Retângulo 77" width="5" height="5" rx="2.5" transform="translate(36 240)" fill="#f26122"/>
+                                                          <rect id="Retângulo_81" data-name="Retângulo 81" width="5" height="5" rx="2.5" transform="translate(43 240)" fill="#f26122"/>
+                                                          <rect id="Retângulo_83" data-name="Retângulo 83" width="5" height="5" rx="2.5" transform="translate(50 240)" fill="#f26122"/>
+                                                          <rect id="Retângulo_79" data-name="Retângulo 79" width="5" height="5" rx="2.5" transform="translate(36 247)" fill="#f26122"/>
+                                                          <rect id="Retângulo_80" data-name="Retângulo 80" width="5" height="5" rx="2.5" transform="translate(43 247)" fill="#f26122"/>
+                                                          <rect id="Retângulo_82" data-name="Retângulo 82" width="5" height="5" rx="2.5" transform="translate(50 247)" fill="#f26122"/>
+                                                          <line id="Linha_11" data-name="Linha 11" y2="5" transform="translate(38.5 226.5)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+                                                          <line id="Linha_12" data-name="Linha 12" y2="5" transform="translate(52.5 226.5)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+                                                        </g>
+                                                    </svg>                                                      
+                                                </div>
+                                                <div class="step-cta-header-title">Want to discuss</div>
+                                            </div>
+
+                                            <div class="step-cta-content">
+                                                <div class="step-cta-content-title">Schedule a Call</div>
+                                                <div class="step-cta-content-text">I'd prefer to speak with a specialist to discuss my specific needs. 20 min call to discuss video solutions for your business.</div>
+                                                <div class="step-cta-button">
+                                                    <button class="button-default">SCHEDULE NOW</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                        <div class="step-cta">
+                                            <div class="step-cta-header">
+                                                <div class="step-cta-header-icon">
+                                                    <svg xmlns="http://www.w3.org/2000/svg" width="31" height="36.668" viewBox="0 0 31 36.668">
+                                                        <g id="in-a-rush" transform="translate(-5 -6.876)">
+                                                          <g id="Retângulo_20" data-name="Retângulo 20" transform="translate(5 14.527)" fill="none" stroke="#f26122" stroke-width="2">
+                                                            <rect width="31" height="29.017" rx="5" stroke="none"/>
+                                                            <rect x="1" y="1" width="29" height="27.017" rx="4" fill="none"/>
+                                                          </g>
+                                                          <g id="Retângulo_22" data-name="Retângulo 22" transform="translate(8.519 21.306) rotate(-31)" fill="#404040" stroke="#f26122" stroke-width="2">
+                                                            <rect width="28.017" height="5.467" rx="2.733" stroke="none"/>
+                                                            <rect x="1" y="1" width="26.017" height="3.467" rx="1.733" fill="none"/>
+                                                          </g>
+                                                          <line id="Linha_1" data-name="Linha 1" x2="1.367" y2="2.05" transform="translate(12.642 19.603)" fill="none" stroke="#f26122" stroke-width="2"/>
+                                                          <line id="Linha_15" data-name="Linha 15" x2="11" transform="translate(19.5 25.5)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+                                                          <line id="Linha_16" data-name="Linha 16" x2="20" transform="translate(10.5 30.5)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+                                                          <line id="Linha_17" data-name="Linha 17" x2="20" transform="translate(10.5 35.5)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+                                                        </g>
+                                                    </svg>
+                                                                                                            
+                                                </div>
+                                                <div class="step-cta-header-title">In a rush</div>
+                                            </div>
+
+                                            <div class="step-cta-content">
+                                                <div class="step-cta-content-title">Quote</div>
+                                                <div class="step-cta-content-text">I have a video content in mind and would like a quick quote. Fill in the following form to provide us with enough details.</div>
+                                                <div class="step-cta-button">
+                                                    <button class="button-default">FILL IN FORM</button>
+                                                </div>
+                                            </div>
+
+                                        </div>
+
+
+                                    </div>
+                                </div>
+
+
+
+                                <div class="steps">
+
+                                    <div class="step">
+                                        <div class="step-number">02.</div>
+                                        <div class="step-title">Marketing Analysis</div>
+                                        <div class="step-description">
+                                            Our team of video marketing professionals meticulously examine your brand voice, your audience, your video's platforms, and the content of your competitors before writing each screenplay. This knowledge is directly applied to the creation of your unique script.
+                                        </div>
+                                    </div>
+
+
+                                    <div class="step">
+                                        <div class="step-number">03.</div>
+                                        <div class="step-title">Script</div>
+                                        <div class="step-description">
+                                            The Creative Director creates your script based on the Briefing Call/Questionnaire, Marketing Analysis, and Creative Experience, then provides it to you for review. Any suggestions you have will be swiftly addressed, and manufacturing will be scheduled.
+                                        </div>
+                                    </div>
+                                </div>
+
+
+
+
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion-2" [ngClass]="{'active': accordion2Active}">
+                        <div (click)="accordion2Active = !accordion2Active" class="accordion-header container container-side-margin">
+                            <div class="accordion-header-title">PRODUCTION</div>
+                            <div class="accordion-header-steps">3 steps</div>
+                            <div class="accordion-header-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21.515" height="12.879" viewBox="0 0 21.515 12.879">
+                                    <path id="Caminho_126" data-name="Caminho 126" d="M10491.875,14769.336l9.7,9.7,9.7-9.7" transform="translate(10512.329 14781.154) rotate(180)" fill="none" stroke="#f1f1f1" stroke-width="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="accordion-content container container-side-margin">
+
+                            <div class="steps">
+
+                                <div class="step">
+                                    <div class="step-number">04.</div>
+                                    <div class="step-title">Storyboard & First Preview</div>
+                                    <div class="step-description">  
+                                        For animation & stock footage, instead of providing a storyboard, we provide you with a 40-second  preview of your video for a true taste of the final product.
+                                    </div>
+                                    <div class="exclusive-box">
+                                        <div class="exclusive-box-title">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="43.685" height="38.99" viewBox="0 0 43.685 38.99">
+                                                <g id="diamond" transform="translate(-2566.777 -16543.615)">
+                                                  <path id="Caminho_134" data-name="Caminho 134" d="M2578.186,16545.168l-10.06,9.3,20.373,26.545,20.627-26.545-9.468-9.3Z" transform="translate(0 -0.043)" fill="none" stroke="#EF882E" stroke-width="2"/>
+                                                  <path id="Caminho_135" data-name="Caminho 135" d="M2583.285,16545.2l4.066,9.395,6.256,26.121,6.594-26.121,3.973-9.553" transform="translate(-5.108)" fill="none" stroke="#EF882E" stroke-width="2"/>
+                                                  <path id="Caminho_136" data-name="Caminho 136" d="M2568.576,16554.5h13.651l6.457-9.053,6.771,9.053h13.7" transform="translate(-0.152 -0.137)" fill="none" stroke="#EF882E" stroke-width="2"/>
+                                                  <path id="Caminho_137" data-name="Caminho 137" d="M2589.163,16559.1h13.228" transform="translate(-7.088 -4.737)" fill="none" stroke="#EF882E" stroke-width="2"/>
+                                                </g>
+                                            </svg>
+                                            Exclusive Benefit
+                                        </div>
+                                        Unlike other Video Production companies, we show you the first 40 seconds of your video.
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <div class="step-number">05.</div>
+                                    <div class="step-title">Draft Adjustments</div>
+                                    <div class="step-description">
+                                        At this stage, we will build the video to your liking, based on feedback from the 40 second first draft.
+                                    </div>
+                                </div>
+
+                                <div class="step">
+                                    <div class="step-number">06.</div>
+                                    <div class="step-title">Full production</div>
+                                    <div class="step-description">
+                                        Whether your video is a lifestyle (live action) or  animated, our team will create a fully produced video.
+                                    </div>
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="accordion accordion-3" [ngClass]="{'active': accordion3Active}">
+                        <div (click)="accordion3Active = !accordion3Active" class="accordion-header container container-side-margin">
+                            <div class="accordion-header-title">POST PRODUCTION</div>
+                            <div class="accordion-header-steps">last step</div>
+                            <div class="accordion-header-arrow">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="21.515" height="12.879" viewBox="0 0 21.515 12.879">
+                                    <path id="Caminho_126" data-name="Caminho 126" d="M10491.875,14769.336l9.7,9.7,9.7-9.7" transform="translate(10512.329 14781.154) rotate(180)" fill="none" stroke="#f1f1f1" stroke-width="3"/>
+                                </svg>
+                            </div>
+                        </div>
+                        <div class="accordion-content container container-side-margin">
+
+                            <div class="steps">
+
+                                <div class="step">
+                                    <div class="step-number">07.</div>
+                                    <div class="step-title">Final Adjustments & Distribution</div>
+                                    <div class="step-description">  
+                                        If a video does not fulfill the standards set forth in the approved screenplay, we will continue to work on it until you are completely satisfied with every frame at no additional charge.
+                                    </div>
+
+                                        
+                                    <div class="exclusive-box">
+                                        <div class="exclusive-box-title">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="43.685" height="38.99" viewBox="0 0 43.685 38.99">
+                                                <g id="diamond" transform="translate(-2566.777 -16543.615)">
+                                                  <path id="Caminho_134" data-name="Caminho 134" d="M2578.186,16545.168l-10.06,9.3,20.373,26.545,20.627-26.545-9.468-9.3Z" transform="translate(0 -0.043)" fill="none" stroke="#EF882E" stroke-width="2"/>
+                                                  <path id="Caminho_135" data-name="Caminho 135" d="M2583.285,16545.2l4.066,9.395,6.256,26.121,6.594-26.121,3.973-9.553" transform="translate(-5.108)" fill="none" stroke="#EF882E" stroke-width="2"/>
+                                                  <path id="Caminho_136" data-name="Caminho 136" d="M2568.576,16554.5h13.651l6.457-9.053,6.771,9.053h13.7" transform="translate(-0.152 -0.137)" fill="none" stroke="#EF882E" stroke-width="2"/>
+                                                  <path id="Caminho_137" data-name="Caminho 137" d="M2589.163,16559.1h13.228" transform="translate(-7.088 -4.737)" fill="none" stroke="#EF882E" stroke-width="2"/>
+                                                </g>
+                                            </svg>
+                                            Satisfaction Guaranteed
+                                        </div>
+                                        <button class="button-default">READY</button>
+                                    </div>
+
+                                        
+                                </div>
+
+                            </div>
+
+                        </div>
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section-about">
+        <div class="section-about-container container container-side-margin">
+
+            <div class="section-header">
+                <h1 class="about-title title-default">
+                    ABOUT
+                </h1>
+            </div>
+
+            <div class="section-about-content">
+                <div class="content-wrapper">
+                    
+                    <div class="about-column about-text-container">
+                        <p>
+                            DP2 Videos is a full-service video production company. We specialize in providing you with affordable video solutions for any need. Our team of filmmakers and videographers will capture every moment, from the first frame to the final frame, with an eye for detail and creativity. With over 20 years of experience producing videos for 30 different countries, DP2 is an established video production company with a refined video solution process.
+                        </p>
+                        <p>
+                            Our vast experience includes pre-production, production, and post-production with companies of all sizes and across industries. More video content is required by brands than ever before. It has been shown to be the most effective media type along the digital marketing funnel. As a result, marketers will need to produce far more video content than they have in the past.
+                        </p>
+                        <p>
+                            As an on-demand video production company, we specialize in offering high-quality videos within budget - worldwide. We are on the ground in your city, with one goal: to help you create engaging stories that connect with audiences. Whether it's for social media, TV commercials or web services - we do it all.
+                        </p>
+                    </div>
+
+                    <div class="about-column about-map">
+
+
+                        
+                            <img src="../../../assets/icons/world.svg" alt="DP2 Videos" />
+
+                        <div class="section-about-cta">
+                            <button class="button-default">GET READY</button>
+                        </div>
+                    </div>
+                    
+                    
+                </div>
+            </div>
+
+            
+        </div>
+    </section>
+
+
+    <section class="section-work-with-us section-container">
+        <div class="section-work-with-us-container container container-side-margin">
+            <div class="section-header">
+                <h1 class="work-with-us-title title-default">
+                    WORK WITH DP2 VIDEOS
+                </h1>
+            </div>
+
+            <div class="section-work-with-us-content">
+
+                <div class="work-with-us-contact">
+                    Send an e-mail to <a href="mailto:lucaspipoli@dp2videos.com">lucaspipoli@dp2videos.com</a> with our material. Come join our team. Contact us!
+                </div>
+
+                <div class="work-with-us-image">
+                    <img width="434" height="242" src="../../../assets/images/image-8.jpg" alt="DP2 Videos" />
+                </div>
+            </div>
+
+
+
+        </div>
+    </section>
+
+    <section class="section-get-started section-container">
+        <div class="section-get-started-container container container-side-margin">
+            <div class="section-get-started-text">
+                Do you want to create a video that captures the attention of your audience? Sounds impossible, but it's easier than you think. Simply call the experts at DP2 Video. We will will walk you through every step, from pre-production all the way to post-production. We're available nationwide and have perfected our expertise in corporate videos, animated how-to videos and marketing videos for websites/social platforms. No matter where you are located, we can help get it done quickly at an affordable price!
+            </div>
+            <div class="section-get-started-cta">
+                <button class="button-outline">GET STARTED</button>
+            </div>
+        </div>
+    </section>
+
+
+    
+    
 </div>
