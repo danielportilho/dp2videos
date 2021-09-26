@@ -593,6 +593,100 @@ header.header-top {
     }
 }
 
+.footer {
+    background-color: $gray-dark-suport;
+    color: $gray-2;
+
+    .footer-header {
+        padding: 25px;
+        border-bottom: 1px solid $gray-4;
+        display: flex;
+        
+        .footer-header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+                height: 40px;
+            }
+            .footer-title {
+                font-family: $font-bold;
+                color: $gray-1;
+
+            }
+        }
+    }
+
+    .footer-content {
+        display: flex;
+        padding-top: 41px;
+
+        @media (max-width: 800px) {
+            flex-direction: column;
+        }
+        
+        .footer-column {
+            margin-bottom: 41px;
+            flex: 1;
+
+            .footer-column-title {
+                font-family: $font-bold;
+                font-size: 16px;
+                text-transform: uppercase;
+                margin-bottom: 41px;
+            }
+        }
+
+        .footer-contacts {
+            .footer-contacts-itens {
+                .footer-contact-item {
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    svg {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        .footer-links {
+            .footer-links-menu {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                line-height: 35px;
+
+                li {
+                    cursor: pointer;
+                    display: table;
+                }
+
+                li:hover {
+                    color: white;
+                }
+            }
+        }
+
+        .footer-social {
+            .social-media-icons {
+                a {
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+
+
+    .footer-assignment {
+        padding: 25px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba($gray-dark, 0.2);
+        font-size: 14px;
+    }
+}
+
 
 /* ################### */
 
@@ -623,11 +717,8 @@ header.header-top {
 .button-default {
     min-width: 200px;
     padding: 25px;
-    // background-color: $primary-color;
-    // color: $white;
     font-family: $font-medium;
     font-size: 16px;
-    // border: none;
     border-radius: 50px;
     cursor: pointer;
     transition: all .3s ease;
@@ -779,33 +870,6 @@ header.header-top {
     }
     .accordion-3 {
         background-color: #1F1F1F;
-    }
-}
-
-.tabs {
-    .tabs-header {
-        display: flex;
-        justify-content: center;
-        align-content: center;
-        flex-wrap: wrap;
-
-        button {
-            flex: 0;
-        }
-        
-        button:first-child {
-            margin-right: 67px;
-            margin-bottom: 0px;
-        }
-        
-        @media (max-width: 768px) {
-            flex-direction: column;
-            
-            button:first-child {
-                margin-right: 0px;
-                margin-bottom: 41px;
-            }
-        }
     }
 }
 
