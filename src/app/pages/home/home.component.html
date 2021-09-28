@@ -1,5 +1,5 @@
 <div class="main">
-    <header class="header" [ngClass]="{'header-top': !showFixedHeader}">
+    <header class="header" [ngClass]="{'header-top': !showFixedHeader, 'header-menu-active': showMenu}">
         <div class="container container-side-margin header-container">
             <div class="header-logo">
                 <svg id="logo_positiva" data-name="logo positiva" xmlns="http://www.w3.org/2000/svg" width="76.534" height="79.833" viewBox="0 0 76.534 79.833">
@@ -51,10 +51,12 @@
                     </g>
                 </svg>              
             </div>
+
+            
+
             <div class="header-navigation">
                 <div class="header-navigation-wrapper">
-                    <div class="mobile-close-button"></div>
-                    <ul class="menu">
+                    <ul class="menu" [ngClass]="{'menu-active': showMenu}">
                         <li class="menu-item">PORTFOLIO</li>
                         <li class="menu-item">SERVICES</li>
                         <li class="menu-item">HOW WE WORK</li>
@@ -63,7 +65,13 @@
                         <li class="menu-item menu-get-started">GET STARTED</li>
                     </ul>
                 </div>
-            </div>    
+            </div>
+            
+            <div class="mobile-menu-button" (click)="showMenu = !showMenu" [ngClass]="{'mobile-menu-button-close': showMenu}">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
         </div>
     </header>
     
@@ -449,7 +457,7 @@
                 <div class="accordion-container">
 
                     <div class="accordion accordion-1" [ngClass]="{'active': accordion1Active}">
-                        <div (click)="accordion1Active = !accordion1Active" class="accordion-header container container-side-margin">
+                        <div (click)="accordion1Active = !accordion1Active; accordion2Active = false; accordion3Active = false;" class="accordion-header container container-side-margin">
                             <div class="accordion-header-title">PRE PRODUCTION</div>
                             <div class="accordion-header-steps">3 steps</div>
                             <div class="accordion-header-arrow">
@@ -574,7 +582,7 @@
                     </div>
 
                     <div class="accordion accordion-2" [ngClass]="{'active': accordion2Active}">
-                        <div (click)="accordion2Active = !accordion2Active" class="accordion-header container container-side-margin">
+                        <div (click)="accordion2Active = !accordion2Active; accordion1Active = false; accordion3Active = false" class="accordion-header container container-side-margin">
                             <div class="accordion-header-title">PRODUCTION</div>
                             <div class="accordion-header-steps">3 steps</div>
                             <div class="accordion-header-arrow">
@@ -631,7 +639,7 @@
                     </div>
 
                     <div class="accordion accordion-3" [ngClass]="{'active': accordion3Active}">
-                        <div (click)="accordion3Active = !accordion3Active" class="accordion-header container container-side-margin">
+                        <div (click)="accordion3Active = !accordion3Active; accordion1Active = false; accordion2Active = false" class="accordion-header container container-side-margin">
                             <div class="accordion-header-title">POST PRODUCTION</div>
                             <div class="accordion-header-steps">last step</div>
                             <div class="accordion-header-arrow">
@@ -763,7 +771,7 @@
 
     <footer class="footer">
         <div class="footer-header">
-            <div class="footer-header-container container container-side-margin">
+            <div class="footer-header-container container">
                 <svg id="logo_positiva" data-name="logo positiva" xmlns="http://www.w3.org/2000/svg" width="76.534" height="79.833" viewBox="0 0 76.534 79.833">
                     <g id="Grupo_149" data-name="Grupo 149">
                         <path id="Caminho_72" data-name="Caminho 72" d="M22.2,922.884,20.28,914.31H21.4l1.355,6.319,1.291-6.319h1.09l-1.894,8.574Z" transform="translate(-18.701 -843.147)" fill="#F1F1F1"/>

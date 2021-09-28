@@ -11,6 +11,7 @@ export class HomeComponent implements OnInit {
   accordion1Active = false;
   accordion2Active = false;
   accordion3Active = false;
+  showMenu: boolean;
 
   constructor() { }
 
