@@ -1,3 +1,4 @@
+import { RouterTestingModule } from '@angular/router/testing';
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { GetStartedComponent } from './get-started.component';
@@ -8,7 +9,8 @@ describe('GetStartedComponent', () => {
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ GetStartedComponent ]
+      declarations: [ GetStartedComponent ],
+      imports: [ RouterTestingModule ]
     })
     .compileComponents();
   }));
