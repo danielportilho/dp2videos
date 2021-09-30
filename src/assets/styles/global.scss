@@ -21,3 +21,334 @@ p {
     padding-right: 25px;
     box-sizing: border-box;
 }
+
+.button-outline,
+.button-default {
+    min-width: 200px;
+    padding: 25px;
+    font-family: $font-medium;
+    font-size: 16px;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: all .3s ease;
+    text-transform: uppercase;
+}
+
+.button-default {
+    background-color: $primary-color;
+    color: $white;
+    border: none;
+}
+
+.button-outline {
+    background-color: white;
+    color: $primary-color;
+    border: 3px solid $primary-color;
+}
+
+.button-default:hover {
+    background-color: $hover-primary-color;
+}
+
+.button-outline:hover {
+    background-color: $hover-primary-color;
+    color: white;
+    border: 3px solid $hover-primary-color;
+}
+
+
+.title-light,
+.title-default {
+    font-family: $font-bold;
+    font-size: 25px;
+    text-transform: uppercase;
+    text-align: center;
+    padding: 0 40px;
+    position: relative;
+    display: table;
+    text-align: center;
+}
+
+
+.title-light { color: $gray-1; }
+.title-default { color: $gray-dark; }
+
+
+.title-light::after,
+.title-light::before,
+.title-default::after,
+.title-default::before {
+    content: "";
+    display: block;
+    height: 1px;
+    width: 40px;
+    position: absolute;
+    top: 50%;
+}
+
+.title-light::after,
+.title-light::before {
+    background-color: $gray-1;
+}
+.title-default::after,
+.title-default::before {
+    background-color: $gray-3;
+}
+
+.title-light::after,
+.title-default::after {
+    right: -16px;
+}
+.title-light::before,
+.title-default::before {
+    left: -16px;
+}
+
+
+.mobile-menu-button {
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+    span {
+        display: block;
+        height: 3px;
+        margin-bottom: 6px;
+        background-color: $gray-1;
+        transform: rotate(0);
+        transition: all .3s ease;
+        
+        :last-child {
+            margin-bottom: 0px;
+        }
+    }
+}
+
+.mobile-menu-button.mobile-menu-button-close {
+    span {
+        opacity: 0;
+    }
+    span:first-child {
+        transform: rotate(45deg) translate(7px, 7px);
+        opacity: 1;
+    }
+    span:last-child {
+        transform: rotate(-45deg) translate(5px, -6px);
+        opacity: 1;
+    }
+}
+
+.modal {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 9999;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    visibility: hidden;
+    opacity: 0;
+    left: -100%;
+    top: -100%;
+
+
+    .modal-container {
+        background-color: #fff;
+        border-radius: 6px;
+        box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 16px;
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        top: 50%;
+
+        height: 85vh;
+        width: 90vw;
+        max-width: 720px;
+        transform: translate(-50%, -50%) scale(0, 0);
+        opacity: 0;
+        overflow: hidden;
+        transition: all .5s ease;
+
+        @media (max-width: 768px) {
+            height: 95vh;
+            width: 95vw;
+        }
+   
+        .modal-wrapper {
+            display: flex;
+            flex-direction: column;
+            padding: 25px;
+            box-sizing: border-box;
+            height: 100%;
+            
+            @media (max-width: 768px) {
+                padding: 16px;
+            }
+
+            .modal-close-button {
+                align-self: flex-end;
+                padding-left: 16px;
+                padding-bottom: 16px;
+                flex: 0;
+                cursor: pointer;
+    
+                svg {}
+            }
+            
+            .modal-content {
+                flex: 1;
+
+                .calendly-inline-widget {
+                    height: 100%;
+                    overflow-y: hidden;
+                }
+
+                .modal-forms {
+                    height: 100%;
+                    iframe {
+                        width: 100%;
+                        height: 100%;
+                        border-width: 0;
+                        border-top-width: 0px;
+                        border-right-width: 0px;
+                        border-bottom-width: 0px;
+                        border-left-width: 0px;
+                    }
+                }
+
+                
+
+                .show-forms,
+                .show-calendly {
+                    display: block;
+                }
+            }
+            
+            .modal-content {
+                background-color: #fff;
+
+            }
+        }
+    }
+
+    .modal-background {
+        position: absolute;
+        background-color: rgba($gray-dark, 0.6);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+.modal.modal-active {
+    visibility: visible;
+    opacity: 1;
+    left: 0%;
+    top: 0%;
+
+    .modal-container {
+        transform: translate(-50%, -50%) scale(1, 1);
+        opacity: 1;
+    }
+}
+
+.footer {
+    background-color: $gray-dark-suport;
+    color: $gray-2;
+
+    .footer-header {
+        padding: 25px;
+        border-bottom: 1px solid $gray-4;
+        display: flex;
+        
+        .footer-header-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            svg {
+                flex: 0 0 60px;
+                height: 40px;
+            }
+            .footer-title {
+                flex: 0;
+                white-space: nowrap;
+                font-family: $font-bold;
+                color: $gray-1;
+
+            }
+        }
+    }
+
+    .footer-content {
+        display: flex;
+        padding-top: 41px;
+
+        @media (max-width: 800px) {
+            flex-direction: column;
+        }
+        
+        .footer-column {
+            margin-bottom: 41px;
+            flex: 1;
+
+            .footer-column-title {
+                font-family: $font-bold;
+                font-size: 16px;
+                text-transform: uppercase;
+                margin-bottom: 41px;
+            }
+        }
+
+        .footer-contacts {
+            .footer-contacts-itens {
+                .footer-contact-item {
+                    margin-bottom: 10px;
+                    font-size: 16px;
+                    svg {
+                        margin-right: 10px;
+                    }
+                }
+            }
+        }
+
+        .footer-links {
+            .footer-links-menu {
+                margin: 0;
+                padding: 0;
+                list-style: none;
+                line-height: 35px;
+
+                li {
+                    cursor: pointer;
+                    display: table;
+                }
+
+                li:hover {
+                    color: white;
+                }
+            }
+        }
+
+        .footer-social {
+            .social-media-icons {
+                a {
+                    margin-right: 16px;
+                }
+            }
+        }
+    }
+
+
+    .footer-assignment {
+        padding: 25px 0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background-color: rgba($gray-dark, 0.2);
+        font-size: 14px;
+    }
+}
+

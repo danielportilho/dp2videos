@@ -4,10 +4,12 @@ import { NgModule } from '@angular/core';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
+import { GetStartedComponent } from './pages/get-started/get-started.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    GetStartedComponent
   ],
   imports: [
     BrowserModule,

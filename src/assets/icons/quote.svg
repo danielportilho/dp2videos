@@ -1,0 +1,16 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="31" height="36.668" viewBox="0 0 31 36.668">
+  <g id="quote" transform="translate(-5 -6.876)">
+    <g id="Retângulo_20" data-name="Retângulo 20" transform="translate(5 14.527)" fill="none" stroke="#f26122" stroke-width="2">
+      <rect width="31" height="29.017" rx="5" stroke="none"/>
+      <rect x="1" y="1" width="29" height="27.017" rx="4" fill="none"/>
+    </g>
+    <g id="Retângulo_22" data-name="Retângulo 22" transform="translate(8.519 21.306) rotate(-31)" fill="#f8f8f8" stroke="#f26122" stroke-width="2">
+      <rect width="28.017" height="5.467" rx="2.733" stroke="none"/>
+      <rect x="1" y="1" width="26.017" height="3.467" rx="1.733" fill="none"/>
+    </g>
+    <line id="Linha_1" data-name="Linha 1" x2="1.367" y2="2.05" transform="translate(12.642 19.603)" fill="none" stroke="#f26122" stroke-width="2"/>
+    <line id="Linha_15" data-name="Linha 15" x2="11" transform="translate(19.5 25.5)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+    <line id="Linha_16" data-name="Linha 16" x2="20" transform="translate(10.5 30.5)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+    <line id="Linha_17" data-name="Linha 17" x2="20" transform="translate(10.5 35.5)" fill="none" stroke="#f26122" stroke-linecap="round" stroke-width="2"/>
+  </g>
+</svg>
