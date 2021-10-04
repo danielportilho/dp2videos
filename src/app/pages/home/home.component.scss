@@ -433,9 +433,13 @@ header.header-top {
             border-top: 1px solid $gray-2;
 
 
-            /* .video {
-                display: none;
-            } */
+            .video {
+                > iframe {
+                    display: block;
+                    width: 100%;
+                    height: auto;
+                }
+            }
             .play-icon {
                 filter: none;
                 transform: scale(1);
@@ -463,7 +467,7 @@ header.header-top {
 }
 
 .portfolio-card:hover .portfolio-wrapper {
-    box-shadow: 0px 0 10px rgba($gray-dark, 0.2);
+    box-shadow: 0px 0 20px rgba($gray-dark, 0.2);
 
     .portfolio-video {
         .play-icon {
@@ -475,11 +479,12 @@ header.header-top {
 
 
 .section-services {
-    background: url('../../../assets/images/Imagem5.jpg') no-repeat center center;
+    position: relative;
     
-    .bg-video {
-        background-color: rgba($gray-1, 0.9);
-
+    .section-services-wrapper {
+        // background-color: rgba($gray-1, 0.9);
+        z-index: 5;
+        position: relative;
     
         .section-services-container {
             .section-services-content {
@@ -520,6 +525,31 @@ header.header-top {
             }
         }
     }
+
+    .section-services-video-overlay,
+    .section-services-video-bg {
+        position: absolute;
+        left: 0;
+        top: 0;
+        z-index: -20;
+        width: 100%;
+        height: 100%;
+
+        .section-services-video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+    }
+    .section-services-video-bg {
+        overflow: hidden;
+    }
+
+    .section-services-video-overlay {
+        z-index: 1;
+        background: rgba(255,255,255,0.8);
+    }
+
 }
 
 .section-how-we-work {
@@ -934,4 +964,25 @@ section {
             top: -60px;
         }
     }
+}
+
+.loader {
+    border: 8px solid $gray-dark-suport;
+    border-top: 8px solid $primary-color;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+
+    position: absolute;
+    z-index: 0;
+    left: 50%;
+    top: 50%;
+    margin-left: -30px;
+    margin-top: -30px;
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }

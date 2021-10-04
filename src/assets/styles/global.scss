@@ -197,6 +197,7 @@ p {
             }
             
             .modal-content {
+                background-color: #fff;
                 flex: 1;
 
                 .calendly-inline-widget {
@@ -215,9 +216,7 @@ p {
                         border-bottom-width: 0px;
                         border-left-width: 0px;
                     }
-                }
-
-                
+                }                
 
                 .show-forms,
                 .show-calendly {
@@ -225,9 +224,12 @@ p {
                 }
             }
             
-            .modal-content {
-                background-color: #fff;
-
+            .video-wrapper {
+                > iframe {
+                    width: 90%; 
+                    min-width: 17.5em; 
+                    margin:0 auto;
+                }
             }
         }
     }
@@ -243,6 +245,7 @@ p {
     }
 }
 
+
 .modal.modal-active {
     visibility: visible;
     opacity: 1;
@@ -254,6 +257,125 @@ p {
         opacity: 1;
     }
 }
+
+
+
+.modal-portfolio {
+    display: flex;
+    flex-wrap: wrap;
+    z-index: 9999;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    height: 100%;
+
+    visibility: hidden;
+    opacity: 0;
+    left: -100%;
+    top: -100%;
+
+
+
+    .modal-container.modal-container-portfolio {
+        background-color: white;
+        border-radius: 6px;
+        box-shadow: none;
+        position: absolute;
+        z-index: 10;
+        left: 50%;
+        top: 50%;
+
+        height: auto;
+        width: 100%;
+        max-width: 720px;
+        transform: translate(-50%, -50%) scale(0, 0);
+        opacity: 0;
+        overflow: hidden;
+        transition: all .5s ease;
+   
+        .modal-wrapper {
+            display: flex;
+            flex-direction: column;
+            padding: 16px;
+            box-sizing: border-box;
+            height: 100%;
+
+            .modal-close-button {
+                align-self: flex-end;
+                padding-left: 16px;
+                padding-bottom: 16px;
+                flex: 0;
+                cursor: pointer;
+    
+                svg {}
+            }
+            
+            .video-wrapper {
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                padding-top: 56.25%; /* 16:9 Aspect Ratio (divide 9 by 16 = 0.5625) */
+
+                iframe {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    bottom: 0;
+                    right: 0;
+                    width: 100%;
+                    height: 100%;
+                    z-index: 10;
+
+                    border-width: 0px;
+                    border-style: inset;
+                    border-color: initial;
+                    border-image: initial;
+                }
+            }
+
+            .video-modal-info {
+                padding-top: 16px;
+                .video-modal-title {
+                    font-family: $font-medium;
+                    font-size: 16px;
+                    color: $gray-dark;
+                }
+                .video-modal-category {
+                    font-family: $font-regular;
+                    font-size: 14px;
+                    color: $gray-dark-suport;
+                }
+            }
+        }
+    }
+
+    .modal-background {
+        position: absolute;
+        background-color: rgba($gray-dark, 0.6);
+        left: 0;
+        top: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+    }
+}
+
+
+.modal-portfolio.modal-active {
+    visibility: visible;
+    opacity: 1;
+    left: 0%;
+    top: 0%;
+
+    .modal-container {
+        transform: translate(-50%, -50%) scale(1, 1);
+        opacity: 1;
+    }
+}
+
+
+
+
 
 .footer {
     background-color: $gray-dark-suport;

@@ -79,8 +79,8 @@
         <div class="section-main-video-overlay"></div>
         <div class="section-main-video-bg">
             <video class="section-main-video" id="dp2videos" autoplay muted loop preload="metadata">
-                <source src="../../../assets/videos/intro-2.mp4" type="video/mp4">
-                <track label="English" kind="captions" srclang="en" src="../../../assets/videos/intro-2.mp4" default>
+                <source src="../../../assets/videos/intro-3.mp4" type="video/mp4">
+                <track label="English" kind="captions" srclang="en" src="../../../assets/videos/intro-3.mp4" default>
             </video>
         </div>
 
@@ -95,7 +95,7 @@
                 <div class="main-subtitle">COST-EFFECTIVE</div>
             </div>
             <div class="section-main-cta">
-                <button class="button-default">GET STARTED</button>
+                <button (click)="navigateTo()" class="button-default">GET STARTED</button>
             </div>
         </div>
 
@@ -118,13 +118,12 @@
                 <div class="content-wrapper">
                     <div class="section-portfolio-cards">
 
-
-
-
-                        <div class="portfolio-card">
+                        <div *ngFor="let video of portfolio" class="portfolio-card">
                             <div class="portfolio-wrapper">
-                                <div class="portfolio-video">
-                                    <div class="video"></div>
+                                <div class="portfolio-video" [style]="{'background-image' : video.label}" (click)="openModalPortfolio(video.id)">
+                                    <div class="video" [innerHTML]="video.linkVideo">
+                                        {{ video.linkVideo }}
+                                    </div>
                                     <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.801" height="74.239" viewBox="0 0 76.801 74.239">
                                         <g transform="matrix(1, 0, 0, 1, 0, 0)">
                                           <path id="Polígono_7-2" data-name="Polígono 7" d="M21.542,5.948a4,4,0,0,1,6.916,0L46.506,36.99A4,4,0,0,1,43.048,43H6.952a4,4,0,0,1-3.458-6.01Z" transform="translate(6 29) rotate(-30)" fill="#fff"/>
@@ -132,100 +131,11 @@
                                     </svg>
                                 </div>
                                 <div class="portfolio-info">
-                                    <div class="portfolio-title">IQVIA</div>
-                                    <div class="portfolio-subtitle">Corporate video</div>
+                                    <div class="portfolio-title">{{ video.title }}</div>
+                                    <div class="portfolio-subtitle">{{ video.category }}</div>
                                 </div>    
                             </div>
                         </div>
-
-                        <div class="portfolio-card">
-                            <div class="portfolio-wrapper">
-                                <div class="portfolio-video">
-                                    <div class="video"></div>
-                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.801" height="74.239" viewBox="0 0 76.801 74.239">
-                                        <g transform="matrix(1, 0, 0, 1, 0, 0)">
-                                          <path id="Polígono_7-2" data-name="Polígono 7" d="M21.542,5.948a4,4,0,0,1,6.916,0L46.506,36.99A4,4,0,0,1,43.048,43H6.952a4,4,0,0,1-3.458-6.01Z" transform="translate(6 29) rotate(-30)" fill="#fff"/>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-title">IQVIA</div>
-                                    <div class="portfolio-subtitle">Corporate video</div>
-                                </div>    
-                            </div>
-                        </div>
-
-                        <div class="portfolio-card">
-                            <div class="portfolio-wrapper">
-                                <div class="portfolio-video">
-                                    <div class="video"></div>
-                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.801" height="74.239" viewBox="0 0 76.801 74.239">
-                                        <g transform="matrix(1, 0, 0, 1, 0, 0)">
-                                          <path id="Polígono_7-2" data-name="Polígono 7" d="M21.542,5.948a4,4,0,0,1,6.916,0L46.506,36.99A4,4,0,0,1,43.048,43H6.952a4,4,0,0,1-3.458-6.01Z" transform="translate(6 29) rotate(-30)" fill="#fff"/>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-title">IQVIA</div>
-                                    <div class="portfolio-subtitle">Corporate video</div>
-                                </div>    
-                            </div>
-                        </div>
-
-                        <div class="portfolio-card">
-                            <div class="portfolio-wrapper">
-                                <div class="portfolio-video">
-                                    <div class="video"></div>
-                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.801" height="74.239" viewBox="0 0 76.801 74.239">
-                                        <g transform="matrix(1, 0, 0, 1, 0, 0)">
-                                          <path id="Polígono_7-2" data-name="Polígono 7" d="M21.542,5.948a4,4,0,0,1,6.916,0L46.506,36.99A4,4,0,0,1,43.048,43H6.952a4,4,0,0,1-3.458-6.01Z" transform="translate(6 29) rotate(-30)" fill="#fff"/>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-title">IQVIA</div>
-                                    <div class="portfolio-subtitle">Corporate video</div>
-                                </div>    
-                            </div>
-                        </div>
-
-                        <div class="portfolio-card">
-                            <div class="portfolio-wrapper">
-                                <div class="portfolio-video">
-                                    <div class="video"></div>
-                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.801" height="74.239" viewBox="0 0 76.801 74.239">
-                                        <g transform="matrix(1, 0, 0, 1, 0, 0)">
-                                          <path id="Polígono_7-2" data-name="Polígono 7" d="M21.542,5.948a4,4,0,0,1,6.916,0L46.506,36.99A4,4,0,0,1,43.048,43H6.952a4,4,0,0,1-3.458-6.01Z" transform="translate(6 29) rotate(-30)" fill="#fff"/>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-title">IQVIA</div>
-                                    <div class="portfolio-subtitle">Corporate video</div>
-                                </div>    
-                            </div>
-                        </div>
-
-                        <div class="portfolio-card">
-                            <div class="portfolio-wrapper">
-                                <div class="portfolio-video">
-                                    <div class="video"></div>
-                                    <svg class="play-icon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="76.801" height="74.239" viewBox="0 0 76.801 74.239">
-                                        <g transform="matrix(1, 0, 0, 1, 0, 0)">
-                                          <path id="Polígono_7-2" data-name="Polígono 7" d="M21.542,5.948a4,4,0,0,1,6.916,0L46.506,36.99A4,4,0,0,1,43.048,43H6.952a4,4,0,0,1-3.458-6.01Z" transform="translate(6 29) rotate(-30)" fill="#fff"/>
-                                        </g>
-                                    </svg>
-                                </div>
-                                <div class="portfolio-info">
-                                    <div class="portfolio-title">IQVIA</div>
-                                    <div class="portfolio-subtitle">Corporate video</div>
-                                </div>    
-                            </div>
-                        </div>
-
-
-
-
 
 
                     </div>
@@ -239,8 +149,9 @@
 
 
     <section class="section-services">
+
         <div id="services" class="tracker"></div>
-        <div class="bg-video section-container">
+        <div class="section-services-wrapper section-container">
 
         
             <div class="section-services-container container container-side-margin">
@@ -275,7 +186,7 @@
                             </div>
                             <div class="service-title">Full production</div>
                             <div class="service-description">
-                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                                Full team and equipment you need for any professional shoot.
                             </div>
                         </div>
                         
@@ -298,7 +209,7 @@
                             </div>
                             <div class="service-title">Video editing</div>
                             <div class="service-description">
-                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                                Color correction, voice overlay, music, subtitles, and more.
                             </div>
                         </div>
 
@@ -325,7 +236,7 @@
                             </div>
                             <div class="service-title">Explainer video</div>
                             <div class="service-description">
-                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                                Short marketing video used to explain your company, product or service.
                             </div>
                         </div>
 
@@ -358,7 +269,7 @@
                             </div>
                             <div class="service-title">Social media video production</div>
                             <div class="service-description">
-                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                                Videos made fit, capture and engage for your social media.
                             </div>
                         </div>
 
@@ -388,7 +299,7 @@
                             </div>
                             <div class="service-title">Photography & Drone shooting</div>
                             <div class="service-description">
-                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                                Professional headshots, aerial footage, and other photoshoot options.
                             </div>
                         </div>
 
@@ -417,7 +328,7 @@
                             </div>
                             <div class="service-title">Live Webcasting</div>
                             <div class="service-description">
-                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                                Live transmissions or streaming of large scale events or shows.
                             </div>
                         </div>
 
@@ -441,7 +352,7 @@
                             </div>
                             <div class="service-title">Event Coverage</div>
                             <div class="service-description">
-                                Aenean sollicitudin aliquet eros, sit amet facilisis lacus. Donec hendrerit tempor felis a feugiat.
+                                Capture musical concerts to medical research conferences with our experts of event coverage.
                             </div>
                         </div>
 
@@ -450,6 +361,14 @@
                     </div>
                 </div>
             </div>
+        </div>
+
+        <div class="section-services-video-overlay"></div>
+        <div class="section-services-video-bg">
+            <video class="section-services-video" id="dp2videos" autoplay muted loop preload="auto">
+                <source src="../../../assets/videos/intro-4.mp4" type="video/mp4">
+                <track label="English" kind="captions" srclang="en" src="../../../assets/videos/intro-3.mp4" default>
+            </video>
         </div>
     </section>
 
@@ -730,13 +649,9 @@
                     </div>
 
                     <div class="about-column about-map">
-
-
-                        
-                            <img src="../../../assets/icons/world.svg" alt="DP2 Videos" />
-
+                        <img src="../../../assets/icons/world.svg" alt="DP2 Videos" />
                         <div class="section-about-cta">
-                            <button class="button-default">GET READY</button>
+                            <button class="button-default" (click)="navigateTo()">GET READY</button>
                         </div>
                     </div>
                     
@@ -781,7 +696,7 @@
                 Do you want to create a video that captures the attention of your audience? Sounds impossible, but it's easier than you think. Simply call the experts at DP2 Video. We will will walk you through every step, from pre-production all the way to post-production. We're available nationwide and have perfected our expertise in corporate videos, animated how-to videos and marketing videos for websites/social platforms. No matter where you are located, we can help get it done quickly at an affordable price!
             </div>
             <div class="section-get-started-cta">
-                <button class="button-outline">GET STARTED</button>
+                <button class="button-outline" (click)="navigateTo()">GET STARTED</button>
             </div>
         </div>
     </section>
@@ -925,11 +840,11 @@
 
 </div>
 
-<div class="modal calendly" [ngClass]="{'modal-active': showModalCalendly}">
+<div class="modal calendly" *ngIf="showModalCalendly" [ngClass]="{'modal-active': showModalCalendly}">
     <div class="modal-container">
         
         <div class="modal-wrapper">
-            <div  (click)="closeModalCalendly()" class="modal-close-button">
+            <div (click)="closeModalCalendly()" class="modal-close-button">
                 <svg xmlns="http://www.w3.org/2000/svg" width="13.987" height="13.987" viewBox="0 0 13.987 13.987">
                     <g id="close" transform="translate(0)">
                       <rect id="Retângulo_3" data-name="Retângulo 3" width="17.661" height="2.119" transform="translate(1.499) rotate(45)" fill="#1f1f1f"/>
@@ -938,17 +853,14 @@
                 </svg>                  
             </div>
             <div class="modal-content">
-
                 <div class="calendly-inline-widget" data-url="https://calendly.com/dp2videos/discovery?text_color=1f1f1f&primary_color=f26122" style="min-width:320px;height:630px;"></div>
             </div>
-
-
         </div>
     </div>
-    <div (click)="showModalCalendly=false" class="modal-background"></div>
+    <div (click)="closeModalCalendly()" class="modal-background"></div>
 </div>
 
-<div class="modal" [ngClass]="{'modal-active': showModalForms}">
+<div class="modal" *ngIf="showModalForms" [ngClass]="{'modal-active': showModalForms}">
     <div class="modal-container">
         
         <div class="modal-wrapper">
@@ -972,5 +884,35 @@
 
         </div>
     </div>
-    <div (click)="showModalForms=false" class="modal-background"></div>
+    <div (click)="closeModalForms()" class="modal-background"></div>
 </div>
+
+<div class="modal-portfolio" *ngIf="showModalPortfolio" [ngClass]="{'modal-active': showModalPortfolio}">
+    <div class="modal-container modal-container-portfolio">
+        <div class="modal-wrapper">
+
+            <div (click)="closeModalPortfolio()" class="modal-close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13.987" height="13.987" viewBox="0 0 13.987 13.987">
+                    <g id="close" transform="translate(0)">
+                      <rect id="Retângulo_3" data-name="Retângulo 3" width="17.661" height="2.119" transform="translate(1.499) rotate(45)" fill="#1f1f1f"/>
+                      <rect id="Retângulo_5" data-name="Retângulo 5" width="17.661" height="2.119" transform="translate(0 12.489) rotate(-45)" fill="#1f1f1f"/>
+                    </g>
+                </svg>                  
+            </div>
+
+
+            <div class="video-wrapper">
+                <iframe [src]="video.video | safe" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <div class="loader"></div>
+            </div>
+
+            <div class="video-modal-info">
+                <div class="video-modal-title" [innerHTML]="video.title"></div>
+                <div class="video-modal-category" [innerHTML]="video.category"></div>
+            </div>
+
+        </div>
+    </div>
+    <div (click)="closeModalPortfolio()" class="modal-background"></div>
+</div>
+
