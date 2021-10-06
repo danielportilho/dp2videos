@@ -1,6 +1,7 @@
 import { Video } from './../../models/video.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, HostListener, OnChanges, OnInit } from '@angular/core';
+import { DomSanitizer, SafeHtml, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -16,19 +17,29 @@ export class HomeComponent implements OnInit, OnChanges {
   showModalCalendly = false;
   showModalForms = false;
   showModalPortfolio = false;
+  showPortfolio2 = false;
+  showPortfolio3 = false;
   showMenu: boolean;
-  portfolio: Video[] = [];
+  portfolio1: Video[] = [];
+  portfolio2: Video[] = [];
+  portfolio3: Video[] = [];
+  portfolioComplete: Video[] = [];
   video: Video;
+
+  bgVideo1: SafeUrl;
+  bgVideo2: SafeUrl;
 
   calendly: boolean;
   googleForms: boolean;
 
-  constructor(private router: Router, private activatedRouter: ActivatedRoute) {
+  constructor(private router: Router, private activatedRouter: ActivatedRoute, private sanitizer: DomSanitizer) {
+    this.bgVideo1 = sanitizer.bypassSecurityTrustHtml(`<video style="min-width:100%;min-height:100%" autoplay muted loop><source src="../../../assets/videos/intro-web.webm" type="video/webm"><source src="../../../assets/videos/intro-web.mp4" type="video/mp4"></video>`);
+    this.bgVideo2 = sanitizer.bypassSecurityTrustHtml(`<video style="min-width:100%;min-height:100%" autoplay muted loop><source src="../../../assets/videos/intro-web-3.webm" type="video/webm"><source src="../../../assets/videos/intro-web-3.mp4" type="video/mp4"></video>`);
   }
-
+  
   ngOnInit(): void {
-
-    this.portfolio = [
+    
+    this.portfolio1 = [
       {
         id: 1,
         title: 'IQVIA',
@@ -49,70 +60,122 @@ export class HomeComponent implements OnInit, OnChanges {
         category: 'Product Video',
         label: 'url(../../../assets/images/image-8.jpg',
         video: 'https://www.youtube.com/embed/078OxawqNLI'
-      }
-      /* {
+      },
+      {
         id: 4,
         title: 'PondLeap',
         category: 'Startup Intro',
         label: 'url(../../../assets/images/image-8.jpg',
-        video: this.sanitizer.bypassSecurityTrustHtml(`<iframe src="https://www.youtube.com/embed/G-rzE-9zHj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
       },{
         id: 5,
         title: 'MASSEY FERGUSON',
         category: 'Explainer Video',
         label: 'url(../../../assets/images/image-8.jpg',
-        video: this.sanitizer.bypassSecurityTrustHtml(`<iframe src="https://www.youtube.com/embed/G-rzE-9zHj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
       },
-
       {
         id: 6,
         title: 'POSITIVO',
         category: '3D Animation',
         label: 'url(../../../assets/images/image-8.jpg',
-        video: this.sanitizer.bypassSecurityTrustHtml(`<iframe src="https://www.youtube.com/embed/G-rzE-9zHj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      }
+    ];
+    this.portfolio2 = [
+      {
+        id: 7,
+        title: 'Video 7',
+        category: 'Category 7',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
       },
-
       {
         id: 8,
         title: 'Video 8',
         category: 'Category 8',
         label: 'url(../../../assets/images/image-8.jpg',
-        video: this.sanitizer.bypassSecurityTrustHtml(`<iframe src="https://www.youtube.com/embed/G-rzE-9zHj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
       },
       {
         id: 9,
         title: 'Video 9',
         category: 'Category 9',
         label: 'url(../../../assets/images/image-8.jpg',
-        video: this.sanitizer.bypassSecurityTrustHtml(`<iframe src="https://www.youtube.com/embed/G-rzE-9zHj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
       },
       {
         id: 10,
         title: 'Video 10',
         category: 'Category 10',
         label: 'url(../../../assets/images/image-8.jpg',
-        video: this.sanitizer.bypassSecurityTrustHtml(`<iframe src="https://www.youtube.com/embed/G-rzE-9zHj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
       },
       {
         id: 11,
         title: 'Video 11',
         category: 'Category 11',
         label: 'url(../../../assets/images/image-8.jpg',
-        video: this.sanitizer.bypassSecurityTrustHtml(`<iframe src="https://www.youtube.com/embed/G-rzE-9zHj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
       },
       {
         id: 12,
         title: 'Video 12',
         category: 'Category 12',
         label: 'url(../../../assets/images/image-8.jpg',
-        video: this.sanitizer.bypassSecurityTrustHtml(`<iframe src="https://www.youtube.com/embed/G-rzE-9zHj8" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>`)
-      } */
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      }
+    ];
+    this.portfolio3 = [
+      {
+        id: 13,
+        title: 'Video 13',
+        category: 'Category 13',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 14,
+        title: 'Video 14',
+        category: 'Category 14',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 15,
+        title: 'Video 15',
+        category: 'Category 15',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 16,
+        title: 'Video 16',
+        category: 'Category 16',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 17,
+        title: 'Video 17',
+        category: 'Category 17',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 18,
+        title: 'Video 18',
+        category: 'Category 18',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      }
     ];
 
     if (this.activatedRouter.snapshot.fragment) {
       this.goTo(this.activatedRouter.snapshot.fragment);
     }
 
+    this.portfolioComplete = [...this.portfolio1, ...this.portfolio2, ...this.portfolio3];
     this.scrollFunction();
   }
 
@@ -173,7 +236,7 @@ export class HomeComponent implements OnInit, OnChanges {
 
   openModalPortfolio(id: number) {
     this.showModalPortfolio = true;
-    this.video = this.portfolio.find(p => p.id === id);
+    this.video = this.portfolioComplete.find(p => p.id === id);
     this.removePageScroll();
   }
 
@@ -182,5 +245,11 @@ export class HomeComponent implements OnInit, OnChanges {
     this.restorePageScroll();
   }
 
-
+  showMorePortfolio() {
+    if (!this.showPortfolio2) {
+      this.showPortfolio2 = true;
+    } else {
+      this.showPortfolio3 = true;
+    }
+  }
 }
