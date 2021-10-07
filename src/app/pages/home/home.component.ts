@@ -1,7 +1,7 @@
 import { Video } from './../../models/video.model';
 import { ActivatedRoute, Router } from '@angular/router';
 import { Component, EventEmitter, HostListener, OnChanges, OnInit, Output } from '@angular/core';
-import { DomSanitizer, SafeHtml, SafeUrl } from '@angular/platform-browser';
+import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',

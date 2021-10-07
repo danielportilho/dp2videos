@@ -1,3 +1,4 @@
+import { ModalModule } from './components/modal/modal.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -16,7 +17,8 @@ import { GetStartedModule } from './pages/get-started/get-started.module';
     AppRoutingModule,
     HttpClientModule,
     HomeModule,
-    GetStartedModule
+    GetStartedModule,
+    ModalModule
   ],
   providers: [],
   bootstrap: [AppComponent]

@@ -1,6 +1,5 @@
-import { Router, ActivatedRoute } from '@angular/router';
+import { Router } from '@angular/router';
 import { Component, OnChanges, OnInit } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-get-started',
@@ -18,7 +17,7 @@ export class GetStartedComponent implements OnInit, OnChanges {
   calendly: boolean;
   googleForms: boolean;
 
-  constructor(private router: Router, private http: HttpClient) { }
+  constructor(private router: Router) { }
 
   ngOnInit(): void {
   }
