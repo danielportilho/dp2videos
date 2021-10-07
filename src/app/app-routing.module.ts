@@ -7,12 +7,8 @@ import { GetStartedComponent } from './pages/get-started/get-started.component';
 const routes: Routes = [
   {
     path: '',
-    redirectTo: '/home',
+    component: HomeComponent,
     pathMatch: 'full'
-  },
-  {
-    path: 'home',
-    component: HomeComponent
   },
   {
     path: 'get-started',

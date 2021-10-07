@@ -52,7 +52,6 @@
                 </svg>              
             </div>
 
-
             <div class="header-navigation">
                 <div class="header-navigation-wrapper">
                     <ul class="menu" [ngClass]="{'menu-active': showMenu}">
@@ -170,8 +169,6 @@
                                 </div>    
                             </div>
                         </div>
-
-
 
                     </div>
                     <div class="section-portfolio-show-more">
@@ -682,7 +679,7 @@
                     </div>
 
                     <div class="about-column about-map">
-                        <img src="../../../assets/icons/world-2.svg" alt="DP2 Videos" />
+                        <img src="../../../assets/icons/world-4.svg" alt="DP2 Videos" />
                         <div class="section-about-cta">
                             <button class="button-default" (click)="navigateTo()">GET READY</button>
                         </div>
@@ -881,52 +878,10 @@
 
 </div>
 
-<div class="modal calendly" [ngClass]="{'modal-active': showModalCalendly}">
-    <div class="modal-container">
-        
-        <div class="modal-wrapper">
-            <div (click)="closeModalCalendly()" class="modal-close-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13.987" height="13.987" viewBox="0 0 13.987 13.987">
-                    <g id="close" transform="translate(0)">
-                      <rect id="Retângulo_3" data-name="Retângulo 3" width="17.661" height="2.119" transform="translate(1.499) rotate(45)" fill="#1f1f1f"/>
-                      <rect id="Retângulo_5" data-name="Retângulo 5" width="17.661" height="2.119" transform="translate(0 12.489) rotate(-45)" fill="#1f1f1f"/>
-                    </g>
-                </svg>                  
-            </div>
-            <div class="modal-content">
-                <div class="calendly-inline-widget" data-url="https://calendly.com/dp2videos/discovery?text_color=1f1f1f&primary_color=F26122" style="min-width:320px;height:100%;"></div>
-            </div>
-        </div>
-    </div>
-    <div (click)="closeModalCalendly()" class="modal-background"></div>
-</div>
-
-<div class="modal" *ngIf="showModalForms" [ngClass]="{'modal-active': showModalForms}">
-    <div class="modal-container">
-        
-        <div class="modal-wrapper">
-            <div (click)="closeModalForms()" class="modal-close-button">
-                <svg xmlns="http://www.w3.org/2000/svg" width="13.987" height="13.987" viewBox="0 0 13.987 13.987">
-                    <g id="close" transform="translate(0)">
-                      <rect id="Retângulo_3" data-name="Retângulo 3" width="17.661" height="2.119" transform="translate(1.499) rotate(45)" fill="#1f1f1f"/>
-                      <rect id="Retângulo_5" data-name="Retângulo 5" width="17.661" height="2.119" transform="translate(0 12.489) rotate(-45)" fill="#1f1f1f"/>
-                    </g>
-                </svg>                  
-            </div>
-
-
-            <div class="modal-content">
-
-                <div class="modal-forms" [ngClass]="{'show-forms': googleForms}">
-                    <iframe title="DP2 Videos" src="https://docs.google.com/forms/d/e/1FAIpQLSfC6AzgUzKs_Gqo22-rE4y_ZKgx34wCEB5iyl0aWRq0VKsYlA/viewform?embedded=true" width="640" height="2035" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-                </div>
-            </div>
-
-
-        </div>
-    </div>
-    <div (click)="closeModalForms()" class="modal-background"></div>
-</div>
+<app-modal [showModalCalendly]="showModal" (cancel)="closeModal()">
+    <iframe *ngIf="showModalCalendly" title="DP2 Videos" src="https://calendly.com/dp2videos/discovery?text_color=1f1f1f&primary_color=f26122" style="height: 100%; width: 100%;" width="640" height="2035" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <iframe *ngIf="showModalForms" title="DP2 Videos" src="https://docs.google.com/forms/d/e/1FAIpQLSfC6AzgUzKs_Gqo22-rE4y_ZKgx34wCEB5iyl0aWRq0VKsYlA/viewform?embedded=true" width="640" height="2035" style="height: 100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+</app-modal>
 
 <div class="modal-portfolio" *ngIf="showModalPortfolio" [ngClass]="{'modal-active': showModalPortfolio}">
     <div class="modal-container modal-container-portfolio">

@@ -1,5 +1,6 @@
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute } from '@angular/router';
 import { Component, OnChanges, OnInit } from '@angular/core';
+import { HttpClient } from '@angular/common/http';
 
 @Component({
   selector: 'app-get-started',
@@ -10,12 +11,14 @@ export class GetStartedComponent implements OnInit, OnChanges {
 
   showModalCalendly = false;
   showModalForms = false;
+  showModal = false;
+  showLoader = true;
   showMenu: boolean;
 
   calendly: boolean;
   googleForms: boolean;
 
-  constructor(private router: Router) { }
+  constructor(private router: Router, private http: HttpClient) { }
 
   ngOnInit(): void {
   }
@@ -29,29 +32,29 @@ export class GetStartedComponent implements OnInit, OnChanges {
   }
 
   navigateTo(section: string) {
-    if (!section) {
-      this.router.navigate(['']);
-    } else {
+    if (section !== '') {
       this.router.navigate([''], { fragment: section });
+    } else {
+      this.router.navigate(['']);
     }
   }
 
-  openModalCalendly() {
-    this.showModalCalendly = true;
-    this.removePageScroll();
+  openModalForms() {
+    this.showLoader = true;
+    this.showModal = true;
+    this.showModalForms = true;
   }
-  closeModalCalendly() {
-    this.showModalCalendly = false;
-    this.restorePageScroll();
+  openModalCalendly() {
+    this.showLoader = true;
+    this.showModal = true;
+    this.showModalCalendly = true;
   }
 
-  openModalForms() {
-    this.showModalForms = true;
-    this.removePageScroll();
-  }
-  closeModalForms() {
+  closeModal() {
+    this.showModal = false;
     this.showModalForms = false;
-    this.restorePageScroll();
+    this.showModalCalendly = false;
+    this.showLoader = false;
   }
 
   removePageScroll() {
@@ -60,6 +63,4 @@ export class GetStartedComponent implements OnInit, OnChanges {
   restorePageScroll() {
       document.getElementsByTagName('body')[0].removeAttribute('style');
   }
-
-
 }

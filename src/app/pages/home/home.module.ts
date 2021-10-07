@@ -1,8 +1,9 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 
-import { SafeModule } from './../../pipe/safe/safe.module';
 import { HomeComponent } from './home.component';
+import { SafeModule } from './../../pipe/safe/safe.module';
+import { ModalModule } from './../../components/modal/modal.module';
 
 @NgModule({
   declarations: [
@@ -13,7 +14,8 @@ import { HomeComponent } from './home.component';
   ],
   imports: [
     CommonModule,
-    SafeModule
+    SafeModule,
+    ModalModule
   ]
 })
 export class HomeModule { }

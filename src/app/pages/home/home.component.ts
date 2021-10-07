@@ -1,6 +1,6 @@
 import { Video } from './../../models/video.model';
 import { ActivatedRoute, Router } from '@angular/router';
-import { Component, HostListener, OnChanges, OnInit } from '@angular/core';
+import { Component, EventEmitter, HostListener, OnChanges, OnInit, Output } from '@angular/core';
 import { DomSanitizer, SafeHtml, SafeUrl } from '@angular/platform-browser';
 
 @Component({
@@ -10,11 +10,14 @@ import { DomSanitizer, SafeHtml, SafeUrl } from '@angular/platform-browser';
 })
 export class HomeComponent implements OnInit, OnChanges {
 
+  @Output() modalStatus: EventEmitter<any> = new EventEmitter();
+
   showFixedHeader = true;
   accordion1Active = false;
   accordion2Active = false;
   accordion3Active = false;
   showModalCalendly = false;
+  showModal = false;
   showModalForms = false;
   showModalPortfolio = false;
   showPortfolio2 = false;
@@ -28,13 +31,17 @@ export class HomeComponent implements OnInit, OnChanges {
 
   bgVideo1: SafeUrl;
   bgVideo2: SafeUrl;
+  linkCalendly: SafeUrl;
 
   calendly: boolean;
   googleForms: boolean;
 
-  constructor(private router: Router, private activatedRouter: ActivatedRoute, private sanitizer: DomSanitizer) {
-    this.bgVideo1 = sanitizer.bypassSecurityTrustHtml(`<video style="min-width:100%;min-height:100%" autoplay muted loop><source src="../../../assets/videos/intro-web.webm" type="video/webm"><source src="../../../assets/videos/intro-web.mp4" type="video/mp4"></video>`);
-    this.bgVideo2 = sanitizer.bypassSecurityTrustHtml(`<video style="min-width:100%;min-height:100%" autoplay muted loop><source src="../../../assets/videos/intro-web-3.webm" type="video/webm"><source src="../../../assets/videos/intro-web-3.mp4" type="video/mp4"></video>`);
+  constructor(
+      private router: Router, 
+      private activatedRouter: ActivatedRoute, 
+      private sanitizer: DomSanitizer) {
+    this.bgVideo1 = sanitizer.bypassSecurityTrustHtml(`<video style="min-width:100%;min-height:100%" autoplay muted loop playsinline><source src="../../../assets/videos/intro-web.webm" type="video/webm"><source src="../../../assets/videos/intro-web.mp4" type="video/mp4"></video>`);
+    this.bgVideo2 = sanitizer.bypassSecurityTrustHtml(`<video style="min-width:100%;min-height:100%" autoplay muted loop playsinline><source src="../../../assets/videos/intro-web-3.webm" type="video/webm"><source src="../../../assets/videos/intro-web-3.mp4" type="video/mp4"></video>`);
   }
   
   ngOnInit(): void {
@@ -180,7 +187,7 @@ export class HomeComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    if (this.showModalCalendly || this.showModalForms) {
+    if (this.showModal || this.showModalForms) {
       this.removePageScroll();
     } else {
       this.restorePageScroll();
@@ -199,23 +206,20 @@ export class HomeComponent implements OnInit, OnChanges {
   navigateTo() {
     this.router.navigate(['/get-started']);
   }
-
-  openModalCalendly() {
-    this.showModalCalendly = true;
-    this.removePageScroll();
-  }
-  closeModalCalendly() {
-    this.showModalCalendly = false;
-    this.restorePageScroll();
-  }
-
+  
   openModalForms() {
+    this.showModal = true;
     this.showModalForms = true;
-    this.removePageScroll();
   }
-  closeModalForms() {
+  openModalCalendly() {
+    this.showModal = true;
+    this.showModalCalendly = true;
+  }
+
+  closeModal() {
+    this.showModal = false;
     this.showModalForms = false;
-    this.restorePageScroll();
+    this.showModalCalendly = false;
   }
 
   removePageScroll() {

@@ -1,0 +1,19 @@
+<div class="modal calendly" [ngClass]="{'modal-active': showModalCalendly}">
+    <div class="modal-container">
+        
+        <div class="modal-wrapper">
+            <div (click)="closeModalCalendly()" class="modal-close-button">
+                <svg xmlns="http://www.w3.org/2000/svg" width="13.987" height="13.987" viewBox="0 0 13.987 13.987">
+                    <g id="close" transform="translate(0)">
+                      <rect id="Retângulo_3" data-name="Retângulo 3" width="17.661" height="2.119" transform="translate(1.499) rotate(45)" fill="#1f1f1f"/>
+                      <rect id="Retângulo_5" data-name="Retângulo 5" width="17.661" height="2.119" transform="translate(0 12.489) rotate(-45)" fill="#1f1f1f"/>
+                    </g>
+                </svg>                  
+            </div>
+            <div class="modal-content">
+                <ng-content></ng-content>
+            </div>
+        </div>
+    </div>
+    <div (click)="closeModalCalendly()" class="modal-background"></div>
+</div>
