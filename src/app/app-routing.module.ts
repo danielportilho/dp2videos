@@ -6,14 +6,14 @@ import { GetStartedComponent } from './pages/get-started/get-started.component';
 
 const routes: Routes = [
   {
-    path: '',
-    component: HomeComponent,
-    pathMatch: 'full'
-  },
-  {
     path: 'get-started',
     component: GetStartedComponent
   },
+  {
+    path: '',
+    component: HomeComponent,
+    pathMatch: 'full'
+  }
 ];
 
 @NgModule({
