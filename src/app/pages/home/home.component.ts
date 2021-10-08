@@ -40,8 +40,8 @@ export class HomeComponent implements OnInit, OnChanges {
       private router: Router, 
       private activatedRouter: ActivatedRoute, 
       private sanitizer: DomSanitizer) {
-    this.bgVideo1 = sanitizer.bypassSecurityTrustHtml(`<video style="min-width:100%;min-height:100%" autoplay muted loop playsinline><source src="../../../assets/videos/intro-web.webm" type="video/webm"><source src="../../../assets/videos/intro-web.mp4" type="video/mp4"></video>`);
-    this.bgVideo2 = sanitizer.bypassSecurityTrustHtml(`<video style="min-width:100%;min-height:100%" autoplay muted loop playsinline><source src="../../../assets/videos/intro-web-3.webm" type="video/webm"><source src="../../../assets/videos/intro-web-3.mp4" type="video/mp4"></video>`);
+    this.bgVideo1 = sanitizer.bypassSecurityTrustHtml(`<video style="min-width:100%;min-height:100%" src="../../../assets/videos/intro-web.webm" autoplay muted loop playsInline><source src="../../../assets/videos/intro-web.webm" type="video/webm"><source src="../../../assets/videos/intro-web.mp4" type="video/mp4"></video>`);
+    this.bgVideo2 = sanitizer.bypassSecurityTrustHtml(`<video style="min-width:100%;min-height:100%" src="../../../assets/videos/intro-3.mp4" autoplay muted loop playsInline><source src="../../../assets/videos/intro-web-3.webm" type="video/webm"><source src="../../../assets/videos/intro-web-3.mp4" type="video/mp4"></video>`);
   }
   
   ngOnInit(): void {
@@ -179,7 +179,9 @@ export class HomeComponent implements OnInit, OnChanges {
     ];
 
     if (this.activatedRouter.snapshot.fragment) {
-      this.goTo(this.activatedRouter.snapshot.fragment);
+      setTimeout( () => {
+        this.goTo(this.activatedRouter.snapshot.fragment);
+      }, 500);
     }
 
     this.portfolioComplete = [...this.portfolio1, ...this.portfolio2, ...this.portfolio3];
