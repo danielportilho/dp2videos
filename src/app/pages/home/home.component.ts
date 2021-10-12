@@ -49,91 +49,89 @@ export class HomeComponent implements OnInit, OnChanges {
     this.portfolio1 = [
       {
         id: 1,
-        title: 'IQVIA',
-        category: 'Corporate Video',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/LBp2V2Mia9s'
+        title: 'PondLeap',
+        category: 'Take the Leap',
+        label: 'url(../../../assets/images/pondleap.jpg',
+        video: 'https://player.vimeo.com/video/630268012?h=e398909dd1'
       },
       {
         id: 2,
-        title: 'KPMG',
-        category: 'Explainer Video',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/ysyDU5_Q1aI'
+        title: 'Pringles',
+        category: 'Strategy',
+        label: 'url(../../../assets/images/pringles.jpg',
+        video: 'https://player.vimeo.com/video/630265407?h=c295d118f4'
       },
       {
         id: 3,
-        title: 'Cargill',
-        category: 'Product Video',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/078OxawqNLI'
+        title: 'PepsiCo',
+        category: 'Event',
+        label: 'url(../../../assets/images/pepsico.jpg',
+        video: 'https://player.vimeo.com/video/630264621?h=2183ec4828'
       },
       {
         id: 4,
-        title: 'PondLeap',
-        category: 'Startup Intro',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+        title: 'Nivea',
+        category: '',
+        label: 'url(../../../assets/images/nivea.jpg',
+        video: 'https://player.vimeo.com/video/630263280?h=55289085ae'
       },{
         id: 5,
-        title: 'MASSEY FERGUSON',
-        category: 'Explainer Video',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+        title: 'Nestlé',
+        category: 'CHEF',
+        label: 'url(../../../assets/images/nestle.jpg',
+        video: 'https://player.vimeo.com/video/630262193?h=f7b476d449'
       },
       {
         id: 6,
-        title: 'POSITIVO',
-        category: '3D Animation',
+        title: 'KPMG',
+        category: 'Safety',
+        label: 'url(../../../assets/images/kpmg.jpg',
+        video: 'https://player.vimeo.com/video/630261477?h=c4dab2ed0c'
+      },
+      {
+        id: 7,
+        title: 'C8',
+        category: '',
+        label: 'url(../../../assets/images/c8.jpg',
+        video: 'https://player.vimeo.com/video/630258399?h=bdac403a8f'
+      },
+      {
+        id: 8,
+        title: 'Sew EuroDrive',
+        category: '',
+        label: 'url(../../../assets/images/sew-eurodrive.jpg',
+        video: 'https://player.vimeo.com/video/630255438?h=b2bc85c72b'
+      },
+      {
+        id: 9,
+        title: 'Video 9',
+        category: 'Product Video',
         label: 'url(../../../assets/images/image-8.jpg',
         video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
       }
     ];
     this.portfolio2 = [
       {
-        id: 7,
-        title: 'Video 7',
-        category: 'Category 7',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 8,
-        title: 'Video 8',
-        category: 'Category 8',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 9,
-        title: 'Video 9',
-        category: 'Category 9',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
         id: 10,
         title: 'Video 10',
-        category: 'Category 10',
+        category: 'Product Video',
         label: 'url(../../../assets/images/image-8.jpg',
         video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
       },
       {
         id: 11,
         title: 'Video 11',
-        category: 'Category 11',
+        category: 'Explainer Video',
         label: 'url(../../../assets/images/image-8.jpg',
         video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
       },
       {
         id: 12,
         title: 'Video 12',
-        category: 'Category 12',
+        category: 'Startup Intro',
         label: 'url(../../../assets/images/image-8.jpg',
         video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      }
-    ];
-    this.portfolio3 = [
+      },
       {
         id: 13,
         title: 'Video 13',
@@ -151,7 +149,7 @@ export class HomeComponent implements OnInit, OnChanges {
       {
         id: 15,
         title: 'Video 15',
-        category: 'Category 15',
+        category: 'Startup Intro',
         label: 'url(../../../assets/images/image-8.jpg',
         video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
       },
@@ -175,7 +173,72 @@ export class HomeComponent implements OnInit, OnChanges {
         category: 'Category 18',
         label: 'url(../../../assets/images/image-8.jpg',
         video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      }
+      },
+    ];
+    this.portfolio3 = [
+      {
+        id: 19,
+        title: 'Video 19',
+        category: 'Category 19',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 20,
+        title: 'Video 20',
+        category: 'Category 20',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 21,
+        title: 'Video 21',
+        category: 'Category 21',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 22,
+        title: 'Video 22',
+        category: 'Startup Intro',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 23,
+        title: 'Video 23',
+        category: 'Startup Intro',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 24,
+        title: 'Video 24',
+        category: 'Startup Intro',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 25,
+        title: 'Video 25',
+        category: 'Startup Intro',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 26,
+        title: 'Video 26',
+        category: 'Startup Intro',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
+      {
+        id: 27,
+        title: 'Video 27',
+        category: 'Startup Intro',
+        label: 'url(../../../assets/images/image-8.jpg',
+        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+      },
     ];
 
     if (this.activatedRouter.snapshot.fragment) {

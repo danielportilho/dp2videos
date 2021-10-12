@@ -58,8 +58,8 @@
 
             h1 {
                 font-family: $font-bold;
-                font-size: 32px;
-                text-shadow: 0 0 2px $black;
+                font-size: 41px;
+                text-shadow: 0 0 10px rgba($gray-dark, 0.5);
                 text-align: center;                
             }
             @media (max-width: 768px) {
@@ -186,12 +186,16 @@
     transition: opacity .3s ease;
 
     .portfolio-wrapper {
+        display: flex;
+        flex-direction: column;
         border-radius: 5px;
         box-shadow: 0 0 0px rgba($gray-dark, 0.25);
         transition: all .3s ease;
 
         .portfolio-video {
-            background-image: linear-gradient(to top, $gray-dark-suport , $gray-3);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center center;
             height: 190px;
             display: flex;
             justify-content: center;
@@ -203,7 +207,12 @@
             border-left: 1px solid $gray-2;
             border-right: 1px solid $gray-2;
             border-top: 1px solid $gray-2;
+            flex: 1 1 190px;
 
+            svg {
+                opacity: 0;
+                transition: all .3s ease;
+            }
 
             .video {
                 > iframe {
@@ -228,6 +237,9 @@
             border-bottom-left-radius: 5px;
             border-bottom-right-radius: 5px;
             transition: all .3s ease;
+            box-sizing: border-box;
+
+            flex: 1 1 71px;
 
             .portfolio-title {
                 font-family: $font-medium;
@@ -265,7 +277,7 @@
         border-right: 1px solid $hover-primary-color;
 
         .play-icon {
-            transform: scale(1.1);
+            opacity: 1;
             filter: drop-shadow(0px 0px 5px rgb(0 0 0 / 0.4));
         }
     }
@@ -661,9 +673,20 @@
                 color: $gray-1;
                 flex: 1;
                 
+                span {
+                    font-size: 16px;
+                    color: $gray-3;
+                    margin-right: 10px;
+                }
+                
                 @media (max-width: 768px) {
                     font-family: $font-bold;
                     font-size: 16px;
+
+                    span {
+                        font-size: 13px;
+                        margin-right: 0px;
+                    }
                 }
             }
             .accordion-header-steps {
@@ -673,6 +696,10 @@
                 font-size: 14px;
                 color: $gray-1;
                 flex: 0 0 70px;
+            }
+            .accordion-header-steps.the-end {
+                color: $primary-color;
+                font-family: $font-bold;
             }
             .accordion-header-arrow {
                 justify-content: flex-end;
@@ -718,7 +745,15 @@
         background-color: #2D2D2D;
     }
     .accordion-3 {
-        background-color: #1F1F1F;
+        background-color: #282828;
+    }
+    .accordion-4 {
+        background-color: $gray-dark;
+        opacity: 1;
+
+        .accordion-header {
+            cursor: unset;
+        }
     }
 }
 
