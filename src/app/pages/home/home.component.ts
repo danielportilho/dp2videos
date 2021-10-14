@@ -1,7 +1,8 @@
-import { Video } from './../../models/video.model';
-import { ActivatedRoute, Router } from '@angular/router';
 import { Component, EventEmitter, HostListener, OnChanges, OnInit, Output } from '@angular/core';
 import { DomSanitizer, SafeUrl } from '@angular/platform-browser';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { ActivatedRoute, Router } from '@angular/router';
+import { Video } from './../../models/video.model';
 
 @Component({
   selector: 'app-home',
@@ -25,7 +26,6 @@ export class HomeComponent implements OnInit, OnChanges {
   showMenu: boolean;
   portfolio1: Video[] = [];
   portfolio2: Video[] = [];
-  portfolio3: Video[] = [];
   portfolioComplete: Video[] = [];
   video: Video;
 
@@ -37,15 +37,15 @@ export class HomeComponent implements OnInit, OnChanges {
   googleForms: boolean;
 
   constructor(
-      private router: Router, 
-      private activatedRouter: ActivatedRoute, 
+      private router: Router,
+      private activatedRouter: ActivatedRoute,
       private sanitizer: DomSanitizer) {
     this.bgVideo1 = sanitizer.bypassSecurityTrustHtml(`<video style="min-width:100%;min-height:100%" src="../../../assets/videos/intro.mp4" autoplay muted loop playsInline><source src="../../../assets/videos/intro-web.mp4" type="video/mp4"><source src="../../../assets/videos/intro-web.webm" type="video/webm"></video>`);
     this.bgVideo2 = sanitizer.bypassSecurityTrustHtml(`<video style="min-width:100%;min-height:100%" src="../../../assets/videos/intro-3.mp4" autoplay muted loop playsInline><source src="../../../assets/videos/intro-3.mp4" type="video/mp4"><source src="../../../assets/videos/intro-web-3.webm" type="video/webm"></video>`);
   }
-  
+
   ngOnInit(): void {
-    
+
     this.portfolio1 = [
       {
         id: 1,
@@ -104,141 +104,49 @@ export class HomeComponent implements OnInit, OnChanges {
       },
       {
         id: 9,
-        title: 'Video 9',
-        category: 'Product Video',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+        title: 'Almond',
+        category: 'Product launch',
+        label: 'url(../../../assets/images/almond.jpg',
+        video: 'https://player.vimeo.com/video/631169480?h=832265bc47'
       }
     ];
     this.portfolio2 = [
       {
         id: 10,
-        title: 'Video 10',
-        category: 'Product Video',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+        title: 'Mills',
+        category: 'Services',
+        label: 'url(../../../assets/images/mills.jpg',
+        video: 'https://player.vimeo.com/video/631197771?h=b9210fe5c9'
       },
       {
         id: 11,
-        title: 'Video 11',
-        category: 'Explainer Video',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+        title: 'Cargill',
+        category: 'Probeef',
+        label: 'url(../../../assets/images/cargill.jpg',
+        video: 'https://player.vimeo.com/video/630260756?h=bccb61c262'
       },
       {
         id: 12,
-        title: 'Video 12',
-        category: 'Startup Intro',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+        title: 'Hardox',
+        category: '',
+        label: 'url(../../../assets/images/hardox.jpg',
+        video: 'https://player.vimeo.com/video/586324469?h=a2d614e66e'
       },
       {
         id: 13,
-        title: 'Video 13',
-        category: 'Category 13',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
+        title: 'Mars',
+        category: 'Global service case',
+        label: 'url(../../../assets/images/mars.jpg',
+        video: 'https://player.vimeo.com/video/313148085?h=81efe30c38'
       },
       {
         id: 14,
-        title: 'Video 14',
-        category: 'Category 14',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 15,
-        title: 'Video 15',
-        category: 'Startup Intro',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 16,
-        title: 'Video 16',
-        category: 'Category 16',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 17,
-        title: 'Video 17',
-        category: 'Category 17',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 18,
-        title: 'Video 18',
-        category: 'Category 18',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-    ];
-    this.portfolio3 = [
-      {
-        id: 19,
-        title: 'Video 19',
-        category: 'Category 19',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 20,
-        title: 'Video 20',
-        category: 'Category 20',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 21,
-        title: 'Video 21',
-        category: 'Category 21',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 22,
-        title: 'Video 22',
-        category: 'Startup Intro',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 23,
-        title: 'Video 23',
-        category: 'Startup Intro',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 24,
-        title: 'Video 24',
-        category: 'Startup Intro',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 25,
-        title: 'Video 25',
-        category: 'Startup Intro',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 26,
-        title: 'Video 26',
-        category: 'Startup Intro',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
-      {
-        id: 27,
-        title: 'Video 27',
-        category: 'Startup Intro',
-        label: 'url(../../../assets/images/image-8.jpg',
-        video: 'https://www.youtube.com/embed/G-rzE-9zHj8'
-      },
+        title: 'Level Up',
+        category: 'Jiu-jitsu promo',
+        label: 'url(../../../assets/images/level-up.jpg',
+        video: 'https://player.vimeo.com/video/631205408?h=0a8ad85be0'
+      }
+      // + 4 videos
     ];
 
     if (this.activatedRouter.snapshot.fragment) {
@@ -247,7 +155,7 @@ export class HomeComponent implements OnInit, OnChanges {
       }, 500);
     }
 
-    this.portfolioComplete = [...this.portfolio1, ...this.portfolio2, ...this.portfolio3];
+    this.portfolioComplete = [...this.portfolio1, ...this.portfolio2];
     this.scrollFunction();
   }
 
@@ -324,8 +232,6 @@ export class HomeComponent implements OnInit, OnChanges {
   showMorePortfolio() {
     if (!this.showPortfolio2) {
       this.showPortfolio2 = true;
-    } else {
-      this.showPortfolio3 = true;
     }
   }
 }
