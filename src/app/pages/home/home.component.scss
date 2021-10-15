@@ -143,6 +143,10 @@
                     margin-bottom: 41px;
                     margin-right: -10px;
                     margin-left: -10px;
+                    
+                    @media (max-width: 1200px) {
+                        justify-content: center;
+                    }
                 }
 
                 .section-portfolio-show-more {
@@ -178,7 +182,7 @@
     height: 282px;
     padding: 10px;
     box-sizing: border-box;
-    flex: 0 0 383px;
+    flex: 0 0 389px;
     cursor: pointer;
     opacity: 1;
     overflow: auto;
