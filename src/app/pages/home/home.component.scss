@@ -139,7 +139,7 @@
                 .section-portfolio-cards {
                     display: flex;
                     flex-wrap: wrap;
-                    justify-content: center;
+                    justify-content: flex-start;
                     margin-bottom: 41px;
                     margin-right: -10px;
                     margin-left: -10px;
@@ -509,6 +509,7 @@
 
 .section-about {
     padding-top: 67px;
+    background-color: $gray-light;
 
     img {
         width: 100%;
