@@ -126,16 +126,23 @@ header {
         transition: all .4s ease;
 
         .header-logo {
-            flex: 0 0 50px;
+            flex: 0 0 178px;
             transition: all .4s ease;
             cursor: pointer;
-
+            display: flex;
+            align-items: center;
+            
             svg {
-                height: 50px;
+                width: 178px;
                 transition: all .4s ease;
-                g * {
-                    fill: $gray-dark;
-                    transition: fill .3s ease;
+                
+                g {
+                    > .text-dp2 * {
+                        fill: $gray-dark;
+                    }
+                    > path {
+                        fill: $primary-color;
+                    }
                 }
             }
         }
@@ -183,11 +190,12 @@ header {
 
             .header-logo {
                 align-items: flex-start;
-                flex: 0 0 50px;
+                flex: unset;
                 transition: all .4s ease;
+
                 svg {
                     height: 50px;
-                    width: 50px;
+                    width: 160px;
                     g * {
                         fill: $gray-dark;
                         transition: fill .3s ease;
@@ -248,13 +256,20 @@ header.header-top {
             
         }
         .header-logo {
-            flex: 0 0 80px;
+            flex: 0 0 190px;
             cursor: pointer;
+            display: flex;
+            align-items: center;
 
             svg {
-                height: 80px;
-                g * {
-                    fill: $gray-2;
+                width: 190px;
+                g {
+                    > .text-dp2 * {
+                        fill: $gray-2;
+                    }
+                    > path {
+                        fill: $primary-color;
+                    }
                 }
             }
         }
@@ -287,10 +302,11 @@ header.header-top {
 
             .header-logo {
                 align-self: flex-start;
-                flex: 0 0 50px;
+                justify-self: center;
+                flex: unset;
+
                 svg {
-                    height: 50px !important;
-                    width: 50px;
+                    width: 160px;
                     g * {
                         fill: $gray-2;
                     }
@@ -509,7 +525,7 @@ header.header-top {
     color: $gray-2;
 
     .footer-header {
-        padding: 25px;
+        padding: 16px 25px;
         border-bottom: 1px solid $gray-4;
         display: flex;
         
@@ -518,8 +534,8 @@ header.header-top {
             justify-content: center;
             align-items: center;
             svg {
-                flex: 0 0 60px;
-                height: 40px;
+                flex: 0 0 140px;
+                height: 30px;
             }
             .footer-title {
                 flex: 0;

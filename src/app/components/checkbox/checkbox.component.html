@@ -1,0 +1,4 @@
+<ng-content></ng-content>
+<label [attr.for]="labelFor" class="checkbox-element" [ngClass]="{ 'checkbox-error' : error }">
+    <ng-content select="[element]"></ng-content> {{label}}
+</label>

@@ -1,0 +1,49 @@
+@import '../../../assets/styles/variables.scss';
+
+.checkbox-element {
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 16px;
+    white-space: nowrap;
+    font-size: 16px;
+    font-family: $font-medium;
+    
+}
+
+:host ::ng-deep input[type=checkbox] {
+    opacity: 0;
+    position: absolute;
+}
+
+:host ::ng-deep input[type=checkbox] + .checkbox-element {
+    width: 100%;
+    background-color: $white;
+    border: 1px solid $gray-2;
+    border-radius: 6px;
+    transition: 0.3s all;
+    box-shadow: 0 0 10px 0 rgba($gray-dark-suport, 0.2);
+    color: $gray-dark-suport;
+}
+
+:host ::ng-deep input[type=checkbox] + .checkbox-element:hover {
+    box-shadow: 0 0 16px 0 rgba($gray-dark-suport, 0.3);
+    border: 1px solid $gray-3;
+}
+
+:host ::ng-deep input[type=checkbox]:checked + .checkbox-element {
+    border: 1px solid $primary-color;
+}
+
+:host ::ng-deep input[type=checkbox]:checked + .checkbox-element {
+    color: $primary-color;
+}
+
+:host ::ng-deep input[type=checkbox] + .checkbox-element svg g * {
+    fill: $gray-dark-suport;
+    transition: fill .3s ease;
+}
+:host ::ng-deep input[type=checkbox]:checked + .checkbox-element svg g * {
+    fill: $primary-color;
+}

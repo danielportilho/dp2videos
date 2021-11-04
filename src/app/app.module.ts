@@ -1,4 +1,3 @@
-import { ModalModule } from './components/modal/modal.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { HttpClientModule } from '@angular/common/http';
@@ -11,15 +10,14 @@ import { GetStartedModule } from './pages/get-started/get-started.module';
 
 @NgModule({
   declarations: [
-    AppComponent,
+    AppComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
     HomeModule,
-    GetStartedModule,
-    ModalModule
+    GetStartedModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},
     Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],

@@ -15,70 +15,174 @@
     
     .section-get-started-container {
         height: 100%;
-        padding: 67px 0;
         box-sizing: border-box;
         
         .section-get-started-wrapper {
             display: flex;
             flex-direction: column;
+            padding: 67px 0;
 
             .section-get-started-content {
-                .section-get-started-cards {
+                max-width: 600px;
+                background-color: white;
+                margin: auto;
+                border-radius: 10px;
+                box-shadow: 2px 2px 16px rgba($gray-dark, 0.2);
+
+                .section-get-started-form-container {
                     display: flex;
                     flex-wrap: wrap;
+                    padding: 41px;
+                    
+                    @media (max-width: 640px) {
+                        padding: 41px 25px;
+                    }
 
-                    .get-started-card {
+                    .form-header {
                         display: flex;
-                        flex: 1 1 375px;
-                        justify-content: center;
-                        padding: 25px 10px;
+                        justify-content: space-between;
+                        margin-bottom: 41px;
+                        width: 100%;
 
-                        .get-started-card-wrapper {
-                            display: flex;
+                        h1 {
+                            color: $gray-dark;
+                            font-family: $font-bold;
+                            font-size: 20px;
+
+                        }
+
+                        @media (max-width: 540px) {
                             flex-direction: column;
+
+                            h1 {
+                                margin-bottom: 25px;
+                            }
+                        }
+
+                        
+
+                        .schedule-action {
+                            display: flex;
                             align-items: center;
-                            background-color: white;
-                            max-width: 375px;
-                            padding: 41px 25px;
-                            box-sizing: border-box;
-                            border-radius: 6px;
-                            box-shadow: 0 0 10px 1px rgba($gray-dark, 0.2);
+                            font-size: 16px;
+                            font-family: $font-bold;
+                            color: $primary-color;
+                            transition: all .3s ease;
+                            cursor: pointer;
+                            opacity: 1;
                             
-                            @media (max-width: 1024px) {
-                                padding: 25px 16px;
+                            @media (max-width: 450px) {
+                                font-size: 14px;
+
+                                /* svg {
+                                    display: none;
+                                } */
                             }
 
-                            .get-started-card-icon {
-                                margin-bottom: 25px;
+                            svg {
+                                height: 25px;
+                                margin-right: 7px;
                             }
-                            .get-started-card-title {
-                                font-family: $font-bold;
-                                color: $gray-dark;
-                                font-size: 20px;
-                                margin-bottom: 16px;
-                            }
-                            .get-started-card-description {
-                                text-align: center;
-                                margin-bottom: 25px;
-                                color: $gray-dark-suport;
-                                line-height: 25px;
 
-                                span {
-                                    font-size: 14px;
-                                    display: block;
-                                    text-align: center;
-                                    margin-top: 10px;
+                            &:hover {
+                                opacity: 0.8;
+                            }
+                        }
+                    }
+
+                    .section-get-started-form {
+                        flex: 1;
+
+                        .contact {
+                            margin-bottom: 30px;
+                            .subject-container {
+                                display: flex;
+                                flex-wrap: wrap;
+                                justify-content: center;
+                                margin-left: -10px;
+                                margin-right: -10px;
+                                margin-bottom: 25px;
+
+                                .subject-checkbox {
+                                    padding: 10px;
+                                    flex: 1 1 242px;
+
+                                    .input-checkbox:checked + svg {
+                                        g {
+                                            fill: $primary-color;
+                                        }
+                                    }
+                                    svg {
+                                        margin-right: 10px;
+                                    }
                                 }
                             }
-                            .get-started-card-cta {
-                                flex: 1;
-                                display: flex;
-                                align-items: flex-end;
+
+                            .subject-error {
+                                color: $error-color;
+                                font-size: 13px;
+                                font-family: $font-bold;
+                                margin-top: 5px;
                             }
+
+                            button {
+                                margin: auto;
+                                display: block;
+                            }
+                        }
+
+                        .contact:last-child {
+                            margin-bottom: 0px;
                         }
                     }
                 }
             }
         }
     }
+}
+
+.alert-message {
+    position: fixed;
+    left: 50%;
+    margin-left: -150px;
+    top: -100px;
+    padding: 16px;
+    border-radius: 6px;
+    width: 300px;
+    z-index: 101;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 16px rgba($gray-dark, 0.2);
+    transition: all .5s ease;
+    cursor: pointer;
+
+    .alert-message-container {
+        display: flex;
+        justify-content: space-between;
+
+        .alert-message-text {
+            color: white;
+
+            h2 {
+                font-size: 16px;
+                font-family: $font-bold;
+                margin-bottom: 3px;
+            }
+            
+            p {
+                font-family: $font-regular;
+                font-size: 14px;
+            }
+        }
+    }
+}
+
+.alert-message.alert-message-show {
+    top: 41px;
+}
+
+.alert-success {
+    background-color: rgb(61, 170, 18);
+}
+.alert-error {
+    background-color: rgb(212, 26, 26);
 }

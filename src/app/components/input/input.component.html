@@ -1,0 +1,5 @@
+<div class="field-text" [ngClass]="{'error-message': errorField}">
+    <ng-content></ng-content>
+    <label for="">{{ label }}</label>
+    <span *ngIf="errorField" class="error-message">Field is required</span>
+</div>

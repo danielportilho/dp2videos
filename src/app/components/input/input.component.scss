@@ -1,0 +1,74 @@
+@import '../../../assets/styles/variables.scss';
+
+.field-text {
+    display: flex;
+    flex-direction: column;
+
+    label {
+        font-size: 14px;
+        font-family: $font-medium;
+        color: $gray-4;
+        margin-bottom: 3px;
+        order: 0;
+        transition: color .3s ease;
+    }
+
+    span {
+        order: 2;
+    }
+
+    ::ng-deep input:focus + label {
+        color: $primary-color;
+    }
+
+    ::ng-deep input,
+    ::ng-deep textarea {
+        border: 1px solid $gray-2;
+        padding: 10px;
+        background-color: white;
+        border-radius: 4px;
+        color: $gray-dark-suport;
+        font-family: $font-medium;
+        font-size: 16px;
+        transition: border .3s ease;
+        outline: none;
+        order: 1;
+
+        &:hover,
+        &:focus {
+            border: 1px solid $primary-color;
+        }
+    }
+
+    ::ng-deep textarea {
+        resize: none;
+    }
+    
+    ::ng-deep input::placeholder {
+        color: $gray-3;
+    }
+
+    &.error-message {
+        ::ng-deep input:focus + label,
+        label {
+            color: $error-color;
+        }
+    
+        ::ng-deep textarea,
+        ::ng-deep input {
+            border: 1px solid $error-color;
+    
+            &:hover,
+            &:focus {
+                border: 1px solid $primary-color;
+            }
+        }
+
+        span {
+            color: $error-color;
+            font-size: 13px;
+            font-family: $font-bold;
+            margin-top: 5px;
+        }
+    }
+}
