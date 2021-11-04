@@ -222,7 +222,7 @@ header {
                 display: block;
                 position: absolute;
                 right: 25px;
-                top: 27px;
+                top: 20px;
                 span {
                     background-color: $gray-dark;
                 }
@@ -248,9 +248,13 @@ header {
                             font-family: $font-medium;
                             padding: 16px 4px;
                         }
+
+                        li.menu-get-started {
+                            margin: 10px 0 !important;
+                        }
                     }
                     ul.menu.menu-active {
-                        max-height: 306px;
+                        max-height: 315px;
                     }
                 }
             }
@@ -362,7 +366,7 @@ header.header-top {
                     }
 
                     ul.menu.menu-active {
-                        max-height: 306px;
+                        max-height: 315px;
                     }
                 }
             }
