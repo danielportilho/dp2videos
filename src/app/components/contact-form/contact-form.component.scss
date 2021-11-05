@@ -1,0 +1,104 @@
+@import '../../../assets/styles/variables.scss';
+@import '../../../assets/styles/global.scss';
+
+.section-get-started-form {
+    flex: 1;
+
+    .contact {
+        margin-bottom: 30px;
+        .subject-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-left: -10px;
+            margin-right: -10px;
+            margin-bottom: 25px;
+
+            .subject-checkbox {
+                padding: 10px;
+                flex: 1 1 242px;
+
+                .input-checkbox:checked + svg {
+                    g {
+                        fill: $primary-color;
+                    }
+                }
+                svg {
+                    margin-right: 10px;
+                }
+            }
+        }
+
+        .subject-error {
+            color: $error-color;
+            font-size: 13px;
+            font-family: $font-bold;
+            margin-top: 5px;
+        }
+
+        button {
+            margin: auto;
+            display: block;
+        }
+    }
+
+    .contact:last-child {
+        margin-bottom: 0px;
+    }
+}
+
+.alert-message {
+    position: fixed;
+    left: 50%;
+    margin-left: -150px;
+    top: -150px;
+    padding: 16px;
+    border-radius: 6px;
+    width: 300px;
+    z-index: 101;
+    box-sizing: border-box;
+    box-shadow: 2px 2px 16px rgba($gray-dark, 0.2);
+    transition: all .5s ease;
+    cursor: pointer;
+
+    .alert-message-container {
+        display: flex;
+        justify-content: space-between;
+
+        .alert-message-text {
+            color: white;
+            text-align: center;
+
+            h2 {
+                font-size: 16px;
+                font-family: $font-bold;
+                margin-bottom: 3px;
+                margin-right: 10px;
+                line-height: 22px;
+            }
+            
+            p {
+                font-family: $font-regular;
+                font-size: 14px;
+                line-height: 19px;
+            }
+        }
+    }
+}
+
+.alert-message.alert-message-show {
+    top: 41px;
+}
+
+.alert-success {
+    background-color: rgb(61, 170, 18);
+}
+.alert-error {
+    background-color: rgb(212, 26, 26);
+}
+
+.contact-form-anchor {
+    position: absolute;
+    top: -60px;
+    visibility: hidden;
+}

@@ -68,7 +68,6 @@
 
     </section>
 
-
     <section class="section-portfolio section-container">
         <div id="portfolio" class="tracker"></div>
         <div class="section-portfolio-container container container-side-margin">
@@ -133,7 +132,6 @@
             </div>
         </div>
     </section>
-
 
     <section class="section-services">
 
@@ -359,7 +357,6 @@
         </div>
     </section>
 
-
     <section class="section-how-we-work">
         <div id="how-we-work" class="tracker"></div>
         <div class="section-how-we-work-container">
@@ -389,12 +386,9 @@
 
                             <div class="section-how-we-work-steps">
                                 
-                                
-                                
                                 <div class="how-we-work-step-ctas">
                                     <div class="first-step">01.</div>
                                     <div class="step-ctas">
-                                        
                                         
                                         <div class="step-cta">
 
@@ -430,9 +424,7 @@
 
                                                 </div>
                                             </div>
-
                                         </div>
-
 
                                         <div class="step-cta">
                                             <div class="step-cta-header">
@@ -455,24 +447,20 @@
                                                     </svg>
                                                                                                             
                                                 </div>
-                                                <div class="step-cta-header-title">In a rush</div>
+                                                <div class="step-cta-header-title">Contact us</div>
                                             </div>
 
                                             <div class="step-cta-content">
-                                                <div class="step-cta-content-title">Quote</div>
+                                                <div class="step-cta-content-title">Change</div>
                                                 <div class="step-cta-content-text">I have a video content in mind and would like a quick quote. Fill in the following form to provide us with enough details.</div>
                                                 <div class="step-cta-button">
-                                                    <button (click)="openModalForms()" class="button-default">FILL IN FORM</button>
+                                                    <button (click)="openModalForms()" class="button-default">Send us a message</button>
                                                 </div>
                                             </div>
 
                                         </div>
-
-
                                     </div>
                                 </div>
-
-
 
                                 <div class="steps">
 
@@ -493,11 +481,6 @@
                                         </div>
                                     </div>
                                 </div>
-
-
-
-
-
                             </div>
                         </div>
                     </div>
@@ -657,7 +640,6 @@
         </div>
     </section>
 
-
     <section class="section-work-with-us section-container">
         <div id="work-with-dp2" class="tracker"></div>
         <div class="section-work-with-us-container container container-side-margin">
@@ -694,7 +676,6 @@
             </div>
         </div>
     </section>
-
 
     <footer class="footer">
         <div class="footer-header">
@@ -787,9 +768,11 @@
     </footer>
 </div>
 
-<app-modal [showModalCalendly]="showModal" (cancel)="closeModal()">
+<app-modal [title]="showModalCalendly ? 'Schedule a Call' : 'Contact us'" [overflowAuto]="showModalForms" [showModalCalendly]="showModal" (cancel)="closeModal()">
     <iframe *ngIf="showModalCalendly" title="DP2 Videos" src="https://calendly.com/dp2videos/discovery?text_color=1f1f1f&primary_color=f26122" style="height: 100%; width: 100%;" width="640" height="2035" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
-    <iframe *ngIf="showModalForms" title="DP2 Videos" src="https://docs.google.com/forms/d/e/1FAIpQLSfC6AzgUzKs_Gqo22-rE4y_ZKgx34wCEB5iyl0aWRq0VKsYlA/viewform?embedded=true" width="640" height="2035" style="height: 100%" frameborder="0" marginheight="0" marginwidth="0">Loading…</iframe>
+    <div class="modal-contact-form" *ngIf="showModalForms">
+        <app-contact-form class="modal-contact-form-component"></app-contact-form>
+    </div>
 </app-modal>
 
 <div class="modal-portfolio" *ngIf="showModalPortfolio" [ngClass]="{'modal-active': showModalPortfolio}">
@@ -818,4 +801,3 @@
     </div>
     <div (click)="closeModalPortfolio()" class="modal-background"></div>
 </div>
-

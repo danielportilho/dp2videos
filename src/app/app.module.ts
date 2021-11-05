@@ -1,3 +1,5 @@
+import { CheckboxModule } from './components/checkbox/checkbox.module';
+import { InputModule } from './components/input/input.module';
 import { ModalModule } from './components/modal/modal.module';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
@@ -21,7 +23,9 @@ import { FormsModule } from '@angular/forms';
     HomeModule,
     GetStartedModule,
     FormsModule,
-    ModalModule
+    ModalModule,
+    InputModule,
+    CheckboxModule
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy},
     Location, {provide: LocationStrategy, useClass: PathLocationStrategy}],

@@ -10,7 +10,7 @@ export class CheckboxComponent implements OnChanges {
   @Input() error: boolean;
   @Input() label: string;
   @Input() inputID: any;
-  
+
   labelFor: any;
 
   constructor(private el: ElementRef) { }

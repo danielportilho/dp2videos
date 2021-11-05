@@ -6,11 +6,11 @@ import { CommonModule } from '@angular/common';
   declarations: [
     ModalComponent
   ],
-  exports: [
-    ModalComponent
-  ],
   imports: [
     CommonModule
+  ],
+  exports: [
+    ModalComponent
   ]
 })
 

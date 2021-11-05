@@ -8,6 +8,8 @@ import { SafeUrl } from '@angular/platform-browser';
 })
 export class ModalComponent implements OnInit {
 
+  @Input() title = 'Send a message';
+  @Input() overflowAuto = false;
   @Input() showModalCalendly = false;
   @Output() cancel: EventEmitter<void> = new EventEmitter();
 

@@ -1,3 +1,4 @@
+import { ContactFormModule } from './../../components/contact-form/contact-form.module';
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
@@ -18,8 +19,7 @@ import { CheckboxModule } from './../../components/checkbox/checkbox.module';
     CommonModule,
     ModalModule,
     FormsModule,
-    InputModule,
-    CheckboxModule
+    ContactFormModule
   ]
 })
 export class GetStartedModule { }

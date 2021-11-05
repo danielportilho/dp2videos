@@ -1,0 +1,149 @@
+<div class="alert-message" [ngClass]="{ 
+    'alert-message-show': showAlert, 
+    'alert-success': successMessage,
+    'alert-error':  errorMessage }" 
+    (click)="showAlert = false">
+    <div class="alert-message-container">
+        
+        <!-- SUCCESS MESSAGE -->
+        <div *ngIf="successMessage" class="alert-message-text">
+            <h2>You message has been sent!</h2>
+            <p>We'll be in touch soon as possible.</p>
+        </div>
+
+        <!-- ERROR MESSAGE -->
+        <div *ngIf="errorMessage" class="alert-message-text">
+            <h2>We're very sorry, something gone wrong.</h2>
+            <p>Please, wait a few seconds and try again.</p>
+        </div>
+        <svg xmlns="http://www.w3.org/2000/svg" width="16.414" height="16.414" viewBox="0 0 16.414 16.414">
+            <g id="close-white" transform="translate(-3045.793 -2896.793)">
+              <line id="Linha_32" data-name="Linha 32" y1="15" x2="15" transform="translate(3046.5 2897.5)" fill="none" stroke="#fff" stroke-width="2"/>
+              <line id="Linha_33" data-name="Linha 33" x2="15" y2="15" transform="translate(3046.5 2897.5)" fill="none" stroke="#fff" stroke-width="2"/>
+            </g>
+        </svg>
+    </div>
+</div>
+
+<div class="contact-form-anchor" id="contact-form"></div>
+<form class="section-get-started-form" #contact="ngForm">
+
+    <div class="contact">
+        <app-input [label]="'Full name'" [errorField]="fullName.invalid && (fullName.touched || fullName.dirty)">
+            <input placeholder="Type your full name" ngModel #fullName="ngModel" type="text" name="fullName" required>
+        </app-input>
+
+    </div>
+    
+    <div class="contact">
+        <app-input [label]="'E-mail'" [errorField]="email.invalid && (email.touched || email.dirty)">
+            <input placeholder="Your e-mail" ngModel #email="ngModel" type="email" name="email" [pattern]="'[A-Za-z0-9._%-]+@[A-Za-z0-9._%-]+\\.[A-Za-z0-9._%-]{2,10}$'" required>
+        </app-input>
+    </div>
+
+    <div class="contact">
+        <p>I'm looking for...</p>
+
+        <div class="subject-error" *ngIf="showAlertSubject">Please, choose a subject.</div>
+
+        <div class="subject-container">
+
+            <app-checkbox class="subject-checkbox" [label]="'Full production'">
+                <input class="input-checkbox" id="full-production" ngModel #subject="ngModel" type="checkbox" name="subject[]" value="Full production" (change)="addSubject($event)">
+                <svg element xmlns="http://www.w3.org/2000/svg" width="25.005" height="24.809" viewBox="0 0 25.005 24.809">
+                    <g id="fullprod" transform="translate(0.005 -0.011)">
+                      <path id="Caminho_152" data-name="Caminho 152" d="M21.59,10.39H3.56A3.414,3.414,0,0,0,.15,13.8v7.61a3.414,3.414,0,0,0,3.41,3.41H21.59A3.414,3.414,0,0,0,25,21.41V13.8A3.408,3.408,0,0,0,21.59,10.39Zm0,12.42H3.56A1.408,1.408,0,0,1,2.15,21.4V13.79a1.408,1.408,0,0,1,1.41-1.41H21.59A1.408,1.408,0,0,1,23,13.79V21.4A1.408,1.408,0,0,1,21.59,22.81Z" fill="#616161"/>
+                      <path id="Caminho_153" data-name="Caminho 153" d="M3.23,9.88,22.28,5.13A2.6,2.6,0,0,0,21.02.09L1.97,4.83A2.6,2.6,0,1,0,3.23,9.88ZM2.46,6.77,21.51,2.02a.6.6,0,1,1,.29,1.17L2.75,7.94a.607.607,0,0,1-.73-.44A.6.6,0,0,1,2.46,6.77Z" fill="#616161"/>
+                    </g>
+                </svg>
+            </app-checkbox>
+
+            <app-checkbox class="subject-checkbox" [label]="'Video Editing'">
+                <input class="input-checkbox" id="videoEditing" ngModel #videoEditing="ngModel" type="checkbox" name="subject[]" value="Video Editing" (change)="addSubject($event)">
+                <svg element xmlns="http://www.w3.org/2000/svg" width="25" height="22.886" viewBox="0 0 25 22.886">
+                    <g id="editing" transform="translate(0 -0.004)">
+                      <path id="Caminho_145" data-name="Caminho 145" d="M21.71,5.61H17.4l5.21-2.78A1.5,1.5,0,1,0,21.2.18L11.03,5.61H3.29A3.284,3.284,0,0,0,0,8.89V19.6a3.286,3.286,0,0,0,3.29,3.29H21.71A3.286,3.286,0,0,0,25,19.6V8.89A3.284,3.284,0,0,0,21.71,5.61Zm0,15.46H3.29A1.472,1.472,0,0,1,1.82,19.6V8.89A1.472,1.472,0,0,1,3.29,7.42H7.62l-1.8.96a1.5,1.5,0,0,0,.7,2.82,1.527,1.527,0,0,0,.71-.18l6.75-3.61H21.7a1.472,1.472,0,0,1,1.47,1.47V19.6A1.458,1.458,0,0,1,21.71,21.07Z" fill="#616161"/>
+                      <path id="Caminho_146" data-name="Caminho 146" d="M15.1,13.41l-3.67-2.04a1.232,1.232,0,0,0-.59-.15,1.213,1.213,0,0,0-.59.16,1.185,1.185,0,0,0-.59,1.03v4.08a1.185,1.185,0,0,0,.59,1.02,1.2,1.2,0,0,0,1.18.01l3.67-2.04a1.12,1.12,0,0,0,.45-.44,1.149,1.149,0,0,0,.16-.6,1.251,1.251,0,0,0-.16-.6A1.425,1.425,0,0,0,15.1,13.41Z" fill="#616161"/>
+                    </g>
+                </svg>
+            </app-checkbox>
+
+            <app-checkbox class="subject-checkbox" [label]="'Explainer video'">
+                <input class="input-checkbox" id="explainer-video" ngModel #subject="ngModel" type="checkbox" name="subject[]" value="Explainer video" (change)="addSubject($event)">
+                <svg element id="explainer" xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18">
+                    <g>
+                      <path id="Caminho_149" data-name="Caminho 149" d="M21.64,0H3.36A3.408,3.408,0,0,0,0,3.46V14.54A3.408,3.408,0,0,0,3.36,18H21.64A3.415,3.415,0,0,0,25,14.54V3.46A3.408,3.408,0,0,0,21.64,0Zm0,16H3.36A1.411,1.411,0,0,1,2,14.54V3.46A1.411,1.411,0,0,1,3.36,2H21.64A1.411,1.411,0,0,1,23,3.46V14.54A1.411,1.411,0,0,1,21.64,16Z" fill="#616161"/>
+                      <path id="Caminho_150" data-name="Caminho 150" d="M12.3,9.39A2.97,2.97,0,1,0,9.33,6.42,2.97,2.97,0,0,0,12.3,9.39Zm0-3.93a.97.97,0,1,1-.97.97A.971.971,0,0,1,12.3,5.46Z" fill="#616161"/>
+                      <path id="Caminho_151" data-name="Caminho 151" d="M14.76,9.52H9.41A4.4,4.4,0,0,0,5,13.93a1.53,1.53,0,0,0,.45,1.08,1.513,1.513,0,0,0,1.08.45H17.65a1.53,1.53,0,0,0,1.08-.45,1.513,1.513,0,0,0,.45-1.08,4.4,4.4,0,0,0-1.29-3.12A4.488,4.488,0,0,0,14.76,9.52Zm-5.35,2h5.35a2.367,2.367,0,0,1,1.7.71,2.472,2.472,0,0,1,.66,1.23H7.05a2.421,2.421,0,0,1,2.36-1.94Z" fill="#616161"/>
+                    </g>
+                </svg>
+            </app-checkbox>
+
+            <app-checkbox class="subject-checkbox" [label]="'Social media video'">
+                <input class="input-checkbox" id="social-media-video" ngModel #subject="ngModel" type="checkbox" name="subject" value="Social media video" (change)="addSubject($event)" >
+                <svg element id="socialmedia" xmlns="http://www.w3.org/2000/svg" width="25.01" height="17.31" viewBox="0 0 25.01 17.31">
+                    <g>
+                        <path id="Caminho_160" data-name="Caminho 160" d="M21.69,0H3.31A3.308,3.308,0,0,0,0,3.31V14a3.308,3.308,0,0,0,3.31,3.31H21.7A3.308,3.308,0,0,0,25.01,14V3.31A3.322,3.322,0,0,0,21.69,0Zm0,15.43H3.31a1.44,1.44,0,0,1-1.44-1.44V3.31A1.44,1.44,0,0,1,3.31,1.87H21.7a1.44,1.44,0,0,1,1.44,1.44V14A1.447,1.447,0,0,1,21.69,15.43Z" fill="#616161"/>
+                        <path id="Caminho_161" data-name="Caminho 161" d="M14.73,7.78a2.57,2.57,0,1,0-2.57-2.57,2.579,2.579,0,0,0,.04.39l-1.51.88a2.565,2.565,0,1,0-1.63,4.54,2.583,2.583,0,0,0,1.37-.4l1.77,1.12a2.085,2.085,0,0,0-.04.35,2.6,2.6,0,1,0,.95-1.98l-1.58-1a2.4,2.4,0,0,0,.1-.66c0-.11-.02-.22-.03-.33l1.55-.9A2.553,2.553,0,0,0,14.73,7.78Zm-.34-3.16h0a.052.052,0,0,1,.04-.02.488.488,0,0,1,.07-.03.606.606,0,0,1,.24-.06.7.7,0,0,1,.7.7c0,.03-.02.06-.02.09a.794.794,0,0,1-.06.22.555.555,0,0,1-.06.08.769.769,0,0,1-.18.18l-.03.03V5.8a.674.674,0,0,1-.34.1.691.691,0,0,1-.69-.69A.617.617,0,0,1,14.39,4.62ZM9.06,9.13a.68.68,0,1,1,.68-.68A.674.674,0,0,1,9.06,9.13Zm5.67,2.27a.708.708,0,0,1,.43.16v-.01l.02.02a.443.443,0,0,1,.12.15l.06.09c.01.03.02.07.03.11a.526.526,0,0,1,.04.17.7.7,0,0,1-.7.7,77172.3,77172.3,0,0,0-.28-.07c-.01,0-.01,0-.02-.01V12.7a.68.68,0,0,1-.39-.62A.689.689,0,0,1,14.73,11.4Z" fill="#616161"/>
+                    </g>
+                </svg>
+            </app-checkbox>
+
+            <app-checkbox class="subject-checkbox" [label]="'Photo & drone shoot'">
+                <input class="input-checkbox" id="photo-drone-shooting" ngModel #subject="ngModel" type="checkbox" name="subject" value="Photo & drone shoot" (change)="addSubject($event)" >
+                <svg element xmlns="http://www.w3.org/2000/svg" width="26.9" height="17.07" viewBox="0 0 26.9 17.07">
+                    <g>
+                      <path id="photo" d="M26.54.64H22.22A.9.9,0,0,0,21.36,0a.882.882,0,0,0-.85.64H16.19a.35.35,0,1,0,0,.7h4.27V3.19H17.57l-4.13-.8-4.13.8H6.44V1.34h4.27a.35.35,0,1,0,0-.7H6.38A.891.891,0,0,0,5.53,0a.913.913,0,0,0-.86.64H.35a.35.35,0,0,0,0,.7H4.62V3.19H2.67C1.72,3.19.95,4.25.95,5.56s.77,2.37,1.72,2.37H7.42C6.03,9.34,4.5,11.9,4.86,16.2a.936.936,0,0,0,.93.86h.08a.932.932,0,0,0,.85-1.01c-.5-6,3.27-7.81,3.45-7.89.06-.03.11-.08.16-.11L12,8.47a3.984,3.984,0,1,0,2.76.04l1.63-.41c.04.02.06.05.1.07.16.07,3.96,1.87,3.45,7.89a.939.939,0,0,0,.85,1.01h.08a.936.936,0,0,0,.93-.86c.36-4.3-1.17-6.86-2.55-8.27h4.98c.95,0,1.72-1.06,1.72-2.37S25.18,3.2,24.23,3.2H22.28V1.34h4.27A.354.354,0,0,0,26.9.99.363.363,0,0,0,26.54.64ZM15.44,12.2a2.11,2.11,0,1,1-2.11-2.11A2.11,2.11,0,0,1,15.44,12.2Zm8.42-7.31c.18,0,.43.27.43.69s-.26.69-.43.69H16.39l-.11.02-2.83.58h0l-2.83-.58-.12-.02H3.06c-.18,0-.44-.27-.44-.69s.26-.69.43-.69H10l.09-.01,3.36-.53h0l3.36.53.09.01h6.96Z" fill="#616161"/>
+                    </g>
+                </svg>
+            </app-checkbox>
+
+            <app-checkbox class="subject-checkbox" [label]="'Live webcasting'">
+                <input class="input-checkbox" id="live-webcasting" ngModel #subject="ngModel" type="checkbox" name="subject" value="Live webcasting" (change)="addSubject($event)" >
+                <svg element id="live" xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18">
+                    <g>
+                      <path id="Caminho_154" data-name="Caminho 154" d="M10.04,9.17a4.4,4.4,0,0,0-4.41,4.41,1.53,1.53,0,0,0,.45,1.08,1.513,1.513,0,0,0,1.08.45H18.28a1.53,1.53,0,0,0,1.08-.45,1.513,1.513,0,0,0,.45-1.08A4.4,4.4,0,0,0,15.4,9.17Zm7.05,2.7a2.472,2.472,0,0,1,.66,1.23H7.68a2.421,2.421,0,0,1,2.36-1.94h5.35A2.451,2.451,0,0,1,17.09,11.87Z" fill="#616161"/>
+                      <path id="Caminho_155" data-name="Caminho 155" d="M25,3.17A3.175,3.175,0,0,0,21.83,0H3.36A3.408,3.408,0,0,0,0,3.46V14.54A3.408,3.408,0,0,0,3.36,18H21.64A3.415,3.415,0,0,0,25,14.54V4.33h0V3.17Zm-2.91-.1H20.86V.93h1.23V1.3h-.78v.47h.73v.37h-.73V2.7h.78ZM20.12.93h.46l-.73,2.14h-.5L18.62.93h.46l.4,1.27c.02.08.05.16.07.26s.04.17.05.21a3.891,3.891,0,0,1,.11-.47ZM17.91,3.07V.93h.45V3.07h-.45Zm-1.7,0V.93h.45V2.7h.87v.37H16.21ZM23,14.54A1.411,1.411,0,0,1,21.64,16H3.36A1.411,1.411,0,0,1,2,14.54V3.46A1.411,1.411,0,0,1,3.36,2H14.6V3.89a2.935,2.935,0,0,0-2-.79,2.97,2.97,0,1,0,2.97,2.97A2.872,2.872,0,0,0,15,4.34h8ZM13.57,6.07a.97.97,0,1,1-.97-.97A.971.971,0,0,1,13.57,6.07Z" fill="#616161"/>
+                    </g>
+                </svg>
+            </app-checkbox>
+
+            <app-checkbox class="subject-checkbox" [label]="'Event coverage'">
+                <input class="input-checkbox" id="event-coverage" ngModel #subject="ngModel" type="checkbox" name="subject" value="Event coverage" (change)="addSubject($event)" >
+                <svg element id="event" xmlns="http://www.w3.org/2000/svg" width="25" height="21.95" viewBox="0 0 25 21.95">
+                    <g>
+                      <path id="Caminho_147" data-name="Caminho 147" d="M21.34,1.7H18.97V.94a.94.94,0,0,0-1.88,0V1.7H7.91V.94a.94.94,0,1,0-1.88,0V1.7H3.66A3.662,3.662,0,0,0,0,5.36V18.29a3.662,3.662,0,0,0,3.66,3.66H21.34A3.662,3.662,0,0,0,25,18.29V5.36A3.662,3.662,0,0,0,21.34,1.7ZM3.66,3.58H6.03v.76a.94.94,0,0,0,1.88,0V3.58h9.17v.76a.94.94,0,0,0,1.88,0V3.58h2.37a1.784,1.784,0,0,1,1.78,1.78V6.8H1.88V5.36A1.784,1.784,0,0,1,3.66,3.58ZM21.34,20.07H3.66a1.784,1.784,0,0,1-1.78-1.78V8.68H23.11v9.61A1.769,1.769,0,0,1,21.34,20.07Z" fill="#616161"/>
+                      <path id="Caminho_148" data-name="Caminho 148" d="M16.2,12.68a.743.743,0,0,0-.34-.15l-1.48-.2a.836.836,0,0,1-.31-.12.721.721,0,0,1-.21-.25l-.65-1.35a.747.747,0,0,0-.25-.28.653.653,0,0,0-.36-.1.749.749,0,0,0-.36.1.616.616,0,0,0-.25.28l-.65,1.35a.641.641,0,0,1-.21.25.6.6,0,0,1-.31.12l-1.48.2a.7.7,0,0,0-.34.15.664.664,0,0,0-.22.68.655.655,0,0,0,.19.32l1.08,1.04a1.844,1.844,0,0,1,.15.28.739.739,0,0,1,.02.33L9.95,16.8a.667.667,0,0,0,.04.37.756.756,0,0,0,.23.3.747.747,0,0,0,.35.13.69.69,0,0,0,.37-.08l1.32-.71a.68.68,0,0,1,.64,0l1.32.71a.671.671,0,0,0,.37.08.625.625,0,0,0,.35-.13.756.756,0,0,0,.23-.3.676.676,0,0,0,.04-.37l-.27-1.47a.739.739,0,0,1,.02-.33.645.645,0,0,1,.18-.28l1.08-1.03a.685.685,0,0,0,.19-.33.7.7,0,0,0-.01-.38A.663.663,0,0,0,16.2,12.68Z" fill="#616161"/>
+                    </g>
+                </svg>
+            </app-checkbox>
+
+            <app-checkbox class="subject-checkbox" [label]="'Other'">
+                <input class="input-checkbox" id="other" ngModel #subject="ngModel" type="checkbox" name="subject" value="Other..." (change)="addSubject($event)" >
+                <svg element id="other" xmlns="http://www.w3.org/2000/svg" width="25" height="18" viewBox="0 0 25 18">
+                    <g>
+                      <path id="Caminho_156" data-name="Caminho 156" d="M21.64,0H3.36A3.408,3.408,0,0,0,0,3.46V14.54A3.408,3.408,0,0,0,3.36,18H21.64A3.415,3.415,0,0,0,25,14.54V3.46A3.408,3.408,0,0,0,21.64,0Zm0,16H3.36A1.411,1.411,0,0,1,2,14.54V3.46A1.411,1.411,0,0,1,3.36,2H21.64A1.411,1.411,0,0,1,23,3.46V14.54A1.411,1.411,0,0,1,21.64,16Z" fill="#616161"/>
+                      <path id="Caminho_157" data-name="Caminho 157" d="M6.85,7.59A1.41,1.41,0,1,0,8.26,9,1.408,1.408,0,0,0,6.85,7.59Z" fill="#616161"/>
+                      <path id="Caminho_158" data-name="Caminho 158" d="M12.5,7.59A1.41,1.41,0,1,0,13.91,9,1.408,1.408,0,0,0,12.5,7.59Z" fill="#616161"/>
+                      <path id="Caminho_159" data-name="Caminho 159" d="M18.15,7.59A1.41,1.41,0,1,0,19.56,9,1.408,1.408,0,0,0,18.15,7.59Z" fill="#616161"/>
+                    </g>
+                </svg>
+            </app-checkbox>
+
+        </div>
+    </div>
+
+    <div class="contact">
+        <app-input [label]="'Your message (optional)'">
+            <textarea rows="6" ngModel #message="ngModel" name="message"></textarea>
+        </app-input>
+    </div>
+
+    <div class="contact">
+        <button class="button-default" [disabled]="sendingMessage" (click)="sendMessage(contact)">
+            <span [innerHTML]="!formValid || !sendingMessage ? 'SEND MESSAGE' : 'SENDING...'"></span>
+        </button>
+    </div>
+
+</form>
+

@@ -48,14 +48,26 @@
                 padding: 16px;
             }
 
-            .modal-close-button {
-                align-self: flex-end;
-                padding-left: 16px;
-                padding-bottom: 16px;
-                flex: 0;
-                cursor: pointer;
-    
+            .modal-header {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+
+                .modal-title {
+                    font-size: 25px;
+                    font-family: $font-bold;
+                    color: $gray-dark;
+                }
+                .modal-close-button {
+                    align-self: flex-end;
+                    padding-left: 16px;
+                    padding-bottom: 16px;
+                    flex: 0;
+                    cursor: pointer;
+        
+                }
             }
+
             
             .modal-content {
                 background-color: #fff;
@@ -104,6 +116,10 @@
         height: 100%;
         z-index: 1;
     }
+}
+
+.modal-overflow {
+    overflow: auto !important;
 }
 
 

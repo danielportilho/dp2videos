@@ -642,6 +642,15 @@
 
 /* ################### */
 
+.modal-contact-form {
+    padding: 25px;
+
+    .modal-contact-form-component {
+        position: relative;
+        display: block;
+    }
+}
+
 .section-container {
     padding-top: 67px;
     padding-bottom: 67px;
