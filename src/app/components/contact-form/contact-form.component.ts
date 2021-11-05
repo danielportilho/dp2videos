@@ -17,7 +17,7 @@ export class ContactFormComponent implements OnInit {
   formValid = false;
   subject: string[] = [];
 
-  endpoint = "http://localhost:80/dp2-videos/email.php";
+  endpoint = "https://dp2videos.com/email.php";
 
   constructor(private httpClient: HttpClient) { }
 
