@@ -24,7 +24,7 @@
     border-radius: 6px;
     transition: 0.3s all;
     box-shadow: 0 0 10px 0 rgba($gray-dark-suport, 0.2);
-    color: $gray-dark-suport;
+    color: $gray-4;
 }
 
 :host ::ng-deep input[type=checkbox] + .checkbox-element:hover {
@@ -33,17 +33,19 @@
 }
 
 :host ::ng-deep input[type=checkbox]:checked + .checkbox-element {
-    border: 1px solid $primary-color;
+    background-color: $hover-primary-color;
+    box-shadow: 0 0 0px 0 rgba($gray-dark-suport, 0.2);
 }
 
 :host ::ng-deep input[type=checkbox]:checked + .checkbox-element {
-    color: $primary-color;
+    color: $white;
+    border: 1px solid $primary-color;
 }
 
 :host ::ng-deep input[type=checkbox] + .checkbox-element svg g * {
-    fill: $gray-dark-suport;
+    fill: $primary-color;
     transition: fill .3s ease;
 }
 :host ::ng-deep input[type=checkbox]:checked + .checkbox-element svg g * {
-    fill: $primary-color;
+    fill: $white;
 }
