@@ -249,12 +249,16 @@ header {
                             padding: 16px 4px;
                         }
 
-                        li.menu-get-started {
-                            margin: 10px 0 !important;
+                        li:first-child {
+                            margin: 25px 0 0px 0;
+                        }
+
+                        li:last-child {
+                            margin: 10px 0 25px 0;
                         }
                     }
                     ul.menu.menu-active {
-                        max-height: 315px;
+                        max-height: 350px;
                     }
                 }
             }
@@ -363,10 +367,18 @@ header.header-top {
                             padding: 16px 4px;
                             margin: 0;
                         }
+
+                        li:first-child {
+                            margin: 25px 0 0px 0;
+                        }
+
+                        li:last-child {
+                            margin: 10px 0 25px 0;
+                        }
                     }
 
                     ul.menu.menu-active {
-                        max-height: 315px;
+                        max-height: 350px;
                     }
                 }
             }
